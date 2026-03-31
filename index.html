@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SINAPSIS INNOVADORA | Desarrollo e Implementación Agéntica</title>
+    <meta
+      name="description"
+      content="SINAPSIS INNOVADORA diseña e implementa sistemas agénticos para automatizar operaciones, acelerar decisiones y escalar resultados con trazabilidad."
+    />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --bg-soft: #121a33;
+        --card: #ffffff;
+        --text: #0f172a;
+        --light: #e5e7eb;
+        --brand: #3b82f6;
+        --brand-2: #06b6d4;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        color: var(--text);
+        background: #f8fafc;
+        line-height: 1.5;
+      }
+      .hero {
+        background: radial-gradient(circle at top right, rgba(59,130,246,.35), transparent 40%),
+                    radial-gradient(circle at 20% 30%, rgba(6,182,212,.28), transparent 35%),
+                    var(--bg);
+        color: white;
+        padding: 5rem 1.25rem 4rem;
+      }
+      .container { max-width: 1100px; margin: 0 auto; }
+      h1 { font-size: clamp(2rem, 5vw, 3.3rem); margin: 0 0 1rem; }
+      h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: .75rem; }
+      p.lead { font-size: 1.15rem; max-width: 760px; color: #dbeafe; }
+      .cta { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.5rem; }
+      .btn {
+        text-decoration: none;
+        padding: .78rem 1rem;
+        border-radius: .65rem;
+        font-weight: 600;
+      }
+      .btn-primary { background: var(--brand); color: white; }
+      .btn-secondary { border: 1px solid #60a5fa; color: #dbeafe; }
+      section { padding: 3rem 1.25rem; }
+      .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
+      .card {
+        background: var(--card);
+        padding: 1rem;
+        border-radius: .75rem;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 6px 24px rgba(15,23,42,.05);
+      }
+      .steps { counter-reset: step; }
+      .step::before {
+        counter-increment: step;
+        content: counter(step);
+        display: inline-grid;
+        place-items: center;
+        width: 1.7rem;
+        height: 1.7rem;
+        margin-right: .5rem;
+        border-radius: 999px;
+        background: #dbeafe;
+        color: #1d4ed8;
+        font-weight: 700;
+      }
+      .strip {
+        background: var(--bg-soft);
+        color: #e2e8f0;
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+      footer {
+        padding: 2rem 1.25rem 3rem;
+        text-align: center;
+        color: #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p><strong>SINAPSIS INNOVADORA</strong></p>
+        <h1>Desarrollo e implementación agéntica para escalar tu operación</h1>
+        <p class="lead">
+          Diseñamos sistemas de agentes de IA orientados a resultados: automatización de procesos,
+          inteligencia operativa y ejecución con métricas claras desde el primer mes.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contacto">Solicitar diagnóstico</a>
+          <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="servicios">
+      <div class="container">
+        <h2>Qué hacemos</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Arquitectura agéntica</h3>
+            <p>Definimos la estructura de agentes, memoria operativa, reglas y observabilidad.</p>
+          </article>
+          <article class="card">
+            <h3>Implementación end-to-end</h3>
+            <p>Construimos flujos operativos, conectamos fuentes de datos y activamos alertas de valor.</p>
+          </article>
+          <article class="card">
+            <h3>Optimización continua</h3>
+            <p>Medimos KPIs, iteramos prompts y mejoramos rendimiento semana a semana.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Paquetes de servicio</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Starter</h3>
+            <p>Implementación de un flujo crítico y tablero base de resultados.</p>
+          </article>
+          <article class="card">
+            <h3>Growth</h3>
+            <p>Escalado de procesos con múltiples flujos y gobernanza operativa.</p>
+          </article>
+          <article class="card">
+            <h3>Autonomous</h3>
+            <p>Sistema multiagente con monitoreo, SLA y mejora continua.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container steps">
+        <h2>Cómo trabajamos</h2>
+        <p class="step"><strong>Diagnóstico:</strong> detectamos cuellos de botella y priorizamos casos de alto impacto.</p>
+        <p class="step"><strong>Diseño:</strong> modelamos el sistema y definimos métricas de éxito.</p>
+        <p class="step"><strong>Despliegue:</strong> entregamos el flujo en producción con acompañamiento.</p>
+        <p class="step"><strong>Evolución:</strong> iteración continua con revisión semanal de desempeño.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container strip">
+        <h2>Resultados esperados</h2>
+        <ul>
+          <li>Reducción de carga operativa en tareas repetitivas.</li>
+          <li>Menor tiempo entre dato y acción comercial.</li>
+          <li>Trazabilidad completa para decisiones y auditoría interna.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <h2>Agenda una sesión estratégica</h2>
+        <p>
+          Cuéntanos tu operación actual y te proponemos un plan agéntico de implementación en 30 días.
+        </p>
+        <p><strong>SINAPSIS INNOVADORA</strong> · contacto@sinapsisinnovadora.com</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> SINAPSIS INNOVADORA. Todos los derechos reservados.
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
