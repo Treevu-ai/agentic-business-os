@@ -1,0 +1,223 @@
+
+<style>
+  :root {
+    --purple-50: #EEEDFE; --purple-200: #AFA9EC; --purple-600: #534AB7; --purple-800: #3C3489;
+    --teal-50: #E1F5EE; --teal-200: #5DCAA5; --teal-600: #0F6E56; --teal-800: #085041;
+    --amber-50: #FAEEDA; --amber-200: #EF9F27; --amber-600: #854F0B; --amber-800: #633806;
+    --coral-50: #FAECE7; --coral-200: #F0997B; --coral-600: #993C1D; --coral-800: #712B13;
+    --gray-50: #F1EFE8; --gray-200: #B4B2A9; --gray-600: #5F5E5A; --gray-800: #444441;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --purple-50: #26215C; --purple-200: #534AB7; --purple-600: #AFA9EC; --purple-800: #EEEDFE;
+      --teal-50: #04342C; --teal-200: #0F6E56; --teal-600: #5DCAA5; --teal-800: #E1F5EE;
+      --amber-50: #412402; --amber-200: #854F0B; --amber-600: #EF9F27; --amber-800: #FAEEDA;
+      --coral-50: #4A1B0C; --coral-200: #993C1D; --coral-600: #F0997B; --coral-800: #FAECE7;
+      --gray-50: #2C2C2A; --gray-200: #5F5E5A; --gray-600: #B4B2A9; --gray-800: #D3D1C7;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans, sans-serif); }
+
+  .wrapper { padding: 1.5rem 0 2rem; }
+
+  .header { text-align: center; margin-bottom: 1.5rem; }
+  .header-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; color: var(--color-text-tertiary); text-transform: uppercase; margin-bottom: 6px; }
+  .header-title { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+
+  .flow { display: flex; align-items: stretch; gap: 0; margin-bottom: 1.5rem; }
+  .phase { flex: 1; padding: 1rem; border: 0.5px solid var(--color-border-tertiary); position: relative; }
+  .phase:first-child { border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg); }
+  .phase:last-child  { border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0; }
+  .phase-arrow { width: 28px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-text-tertiary); font-size: 14px; }
+
+  .phase-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .phase-name { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .phase-method { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 10px; }
+  .phase-question { font-size: 12px; color: var(--color-text-primary); line-height: 1.5; font-style: italic; border-left: 2px solid; padding-left: 8px; margin-bottom: 10px; }
+  .phase-output { font-size: 11px; color: var(--color-text-secondary); }
+  .phase-output span { display: block; padding: 3px 0; border-top: 0.5px solid var(--color-border-tertiary); }
+  .phase-output span:first-child { border-top: none; }
+
+  .phase-jtbd  { background: var(--purple-50); }
+  .phase-jtbd .phase-tag { color: var(--purple-600); }
+  .phase-jtbd .phase-question { border-color: var(--purple-200); }
+
+  .phase-dmaic { background: var(--teal-50); }
+  .phase-dmaic .phase-tag { color: var(--teal-600); }
+  .phase-dmaic .phase-question { border-color: var(--teal-200); }
+
+  .phase-agent { background: var(--amber-50); }
+  .phase-agent .phase-tag { color: var(--amber-600); }
+  .phase-agent .phase-question { border-color: var(--amber-200); }
+
+  .verdict-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1.5rem; }
+  .verdict-card { padding: 10px 12px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-secondary); }
+  .verdict-icon { font-size: 16px; margin-bottom: 4px; }
+  .verdict-label { font-size: 12px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; }
+  .verdict-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
+  .verdict-cond { font-size: 10px; color: var(--color-text-tertiary); margin-top: 4px; font-style: italic; }
+
+  .blueprint { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; margin-bottom: 1.5rem; }
+  .blueprint-header { background: var(--color-background-secondary); padding: 10px 14px; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 12px; font-weight: 500; color: var(--color-text-secondary); }
+  .blueprint-rows { padding: 4px 0; }
+  .bp-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 14px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .bp-row:last-child { border-bottom: none; }
+  .bp-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .bp-key { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); min-width: 90px; flex-shrink: 0; }
+  .bp-val { font-size: 12px; color: var(--color-text-primary); line-height: 1.5; }
+
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1.5rem; }
+  .rule { padding: 8px 10px; border-radius: var(--border-radius-md); background: var(--coral-50); border: 0.5px solid var(--color-border-tertiary); }
+  .rule-label { font-size: 11px; font-weight: 500; color: var(--coral-600); margin-bottom: 2px; }
+  .rule-text { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
+
+  .footer { text-align: center; font-size: 11px; color: var(--color-text-tertiary); border-top: 0.5px solid var(--color-border-tertiary); padding-top: 1rem; }
+
+  @media (max-width: 600px) {
+    .flow { flex-direction: column; }
+    .phase:first-child { border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0; }
+    .phase:last-child  { border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg); }
+    .phase-arrow { transform: rotate(90deg); height: 24px; width: auto; }
+    .rules { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="wrapper">
+  <div class="header">
+    <div class="header-label">Sinapsis OS — Material de taller</div>
+    <div class="header-title">Marco metodológico del agente</div>
+  </div>
+
+  <div class="flow">
+    <div class="phase phase-jtbd">
+      <div class="phase-tag">Fase 0 · JTBD</div>
+      <div class="phase-name">El trabajo real</div>
+      <div class="phase-method">Jobs To Be Done · Christensen / Ulwick</div>
+      <div class="phase-question">"Cuando [situación], quiero [acción], para [resultado de negocio]."</div>
+      <div class="phase-output">
+        <span>¿El proceso sirve el trabajo real?</span>
+        <span>¿O resuelve el síntoma equivocado?</span>
+        <span>→ Define el resultado antes que la herramienta</span>
+      </div>
+    </div>
+
+    <div class="phase-arrow">→</div>
+
+    <div class="phase phase-dmaic">
+      <div class="phase-tag">Fase 1 · DMAIC</div>
+      <div class="phase-name">Diagnóstico de fricción</div>
+      <div class="phase-method">Lean Six Sigma simplificado</div>
+      <div class="phase-question">"¿Cuánto tiempo, con qué frecuencia falla, quién lo hace?"</div>
+      <div class="phase-output">
+        <span>Define → ¿Qué problema resuelvo?</span>
+        <span>Mide → Tiempo, errores, frecuencia</span>
+        <span>Analiza → ¿Eliminar antes de automatizar?</span>
+        <span>→ Fricción calificada 1–10</span>
+      </div>
+    </div>
+
+    <div class="phase-arrow">→</div>
+
+    <div class="phase phase-agent">
+      <div class="phase-tag">Fase 2 · Agéntica</div>
+      <div class="phase-name">Blueprint del agente</div>
+      <div class="phase-method">Lógica agéntica · Sinapsis OS</div>
+      <div class="phase-question">"¿Qué dispara, qué razona, qué ejecuta, cómo se controla?"</div>
+      <div class="phase-output">
+        <span>Entrada → Disparador del agente</span>
+        <span>Razonamiento → Lógica de decisión</span>
+        <span>Acción → Output concreto</span>
+        <span>Control → Indicador de funcionamiento</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="verdict-row">
+    <div class="verdict-card">
+      <div class="verdict-icon">🗑</div>
+      <div class="verdict-label">Eliminar</div>
+      <div class="verdict-desc">El proceso no agrega valor. Quitarlo es más rápido que automatizarlo.</div>
+      <div class="verdict-cond">Si fricción ≥ 7 y el trabajo real no lo necesita</div>
+    </div>
+    <div class="verdict-card">
+      <div class="verdict-icon">✂</div>
+      <div class="verdict-label">Simplificar</div>
+      <div class="verdict-desc">Reducir pasos manuales antes de introducir tecnología.</div>
+      <div class="verdict-cond">Si fricción 4–6 y hay desperdicio evidente</div>
+    </div>
+    <div class="verdict-card">
+      <div class="verdict-icon">⚡</div>
+      <div class="verdict-label">Automatizar</div>
+      <div class="verdict-desc">El proceso es necesario, estable y repetible. Candidato para agente.</div>
+      <div class="verdict-cond">Si fricción ≤ 4 y el proceso ya está limpio</div>
+    </div>
+  </div>
+
+  <div class="blueprint">
+    <div class="blueprint-header">Formato de entrega — Blueprint de agente</div>
+    <div class="blueprint-rows">
+      <div class="bp-row">
+        <div class="bp-icon">🎯</div>
+        <div class="bp-key">Trabajo real</div>
+        <div class="bp-val">Cuando [situación], quiero [acción], para [resultado].</div>
+      </div>
+      <div class="bp-row">
+        <div class="bp-icon">📊</div>
+        <div class="bp-key">Fricción</div>
+        <div class="bp-val">X/10 — razón en una línea + tabla As-Is vs To-Be</div>
+      </div>
+      <div class="bp-row">
+        <div class="bp-icon">⚖️</div>
+        <div class="bp-key">Veredicto</div>
+        <div class="bp-val">Eliminar · Simplificar · Automatizar</div>
+      </div>
+      <div class="bp-row">
+        <div class="bp-icon">🟢</div>
+        <div class="bp-key">Entrada</div>
+        <div class="bp-val">Disparador del agente (evento, formulario, horario)</div>
+      </div>
+      <div class="bp-row">
+        <div class="bp-icon">🧠</div>
+        <div class="bp-key">Razonamiento</div>
+        <div class="bp-val">Qué evalúa, qué decide, qué descarta</div>
+      </div>
+      <div class="bp-row">
+        <div class="bp-icon">⚡</div>
+        <div class="bp-key">Acción</div>
+        <div class="bp-val">Output concreto que produce o ejecuta</div>
+      </div>
+      <div class="bp-row">
+        <div class="bp-icon">🔁</div>
+        <div class="bp-key">Control</div>
+        <div class="bp-val">Indicador simple de que el agente funciona (DMAIC → Control)</div>
+      </div>
+      <div class="bp-row">
+        <div class="bp-icon">⚠️</div>
+        <div class="bp-key">Riesgo principal</div>
+        <div class="bp-val">Una línea — qué puede salir mal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rules">
+    <div class="rule">
+      <div class="rule-label">Lean — Eliminar antes de automatizar</div>
+      <div class="rule-text">Un proceso ineficiente automatizado solo falla más rápido.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-label">JTBD — Resultado, no función</div>
+      <div class="rule-text">El agente se evalúa por el trabajo que completa, no por lo que hace.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-label">DMAIC — Medir antes de mejorar</div>
+      <div class="rule-text">Sin baseline no hay forma de saber si el agente funcionó.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-label">Control — 1 herramienta por categoría</div>
+      <div class="rule-text">Decisiones claras. No listas de 8 opciones sin criterio.</div>
+    </div>
+  </div>
+
+  <div class="footer">Sinapsis OS · Workshop Material · gettreevu.com</div>
+</div>

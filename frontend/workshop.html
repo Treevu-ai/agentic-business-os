@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORKSHOP: Tu Primer Agente de IA — SINAPSIS_OS</title>
+    <meta name="description"
+        content="Taller intensivo de 3 horas para dueños de PyMEs. Diseña tu primer empleado digital sin programar. Cupos limitados.">
+    <link rel="stylesheet" href="commercial.css">
+    <style>
+        .workshop-hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .workshop-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .workshop-item { background: var(--b800); border: 1px solid var(--bline); padding: 2.5rem; border-top: 2px solid var(--g); }
+        .workshop-item h3 { color: var(--g); margin-bottom: 1.25rem; font-size: 1.25rem; }
+        .workshop-item p { color: var(--w70); font-size: 0.95rem; line-height: 1.65; }
+
+        .price-box {
+            background: var(--b700);
+            border: 1px solid var(--g);
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-box::before {
+            content: 'OFERTA LIMITADA';
+            position: absolute;
+            top: 1rem;
+            right: -2rem;
+            background: var(--g);
+            color: var(--black);
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 0.35rem 3rem;
+            transform: rotate(45deg);
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--w);
+            margin: 1rem 0;
+        }
+
+        .price-sub {
+            font-size: 0.85rem;
+            color: var(--g);
+            letter-spacing: 0.08em;
+            margin-bottom: 2rem;
+        }
+
+        .bonus-alert {
+            background: var(--g-dk);
+            border-left: 3px solid var(--g);
+            padding: 1rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .bonus-alert strong {
+            color: var(--g);
+        }
+
+        @media(max-width: 900px) {
+            .workshop-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .prob-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .facilitador-box {
+                grid-template-columns: 1fr !important;
+                text-align: center !important;
+            }
+            .facilitador-img {
+                margin: 0 auto;
+            }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="os-glow" aria-hidden="true"></div>
+    <div class="os-grid" aria-hidden="true"></div>
+    <div class="os-scan" aria-hidden="true"></div>
+
+    <nav>
+        <div class="container nav-in">
+            <a href="index.html" class="logo">SINAPSIS_<em>OS</em> <span class="ver">v2.1</span></a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">// volver a inicio</a>
+            </div>
+            <a href="https://t.me/SinapsisAgente_bot" class="nav-cta">Asegurar Cupo via Telegram →</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="workshop-hero">
+            <div class="hero-badge">
+                <span class="ping"></span>
+                ONLINE · 3 HORAS · <span id="slots-left" style="color:var(--y);font-weight:800;">SOLO 6</span>/20 CUPOS EARLY BIRD
+            </div>
+            <h1>
+                Diseña tu primer<br>
+                <em id="tw-niche">Empleado Digital</em>.
+            </h1>
+            <p class="hero-sub" style="margin: 0 auto 2rem;">
+                Workshop intensivo para dueños de PyMEs que quieren dejar de ser el cuello de botella. Aprende la lógica
+                de los Agentes de IA y mira cómo trabajan por ti — sin tocar una sola línea de código.
+            </p>
+
+            <div class="workshop-grid">
+                <div class="workshop-item rv">
+                    <h3>01 // Auditoría Lógica</h3>
+                    <p>Usa el "Agentic Canvas" para mapear tu proceso más doloroso y convertirlo en una serie de pasos
+                        que una IA pueda ejecutar con precisión quirúrgica.</p>
+                </div>
+                <div class="workshop-item rv d1">
+                    <h3>02 // Laboratorio Claude</h3>
+                    <p>Importa una arquitectura de prompt real. Crea tu "Claude Project". Ejecuta y mira cómo la IA razona y entrega resultados bajo tus propias reglas de negocio.</p>
+                </div>
+                <div class="workshop-item rv d2">
+                    <h3>03 // El Efecto ROI</h3>
+                    <p>Calcularemos cuántas horas y dólares recuperas al mes. No saldrás con teoría, saldrás con un plan
+                        de implementación listo para tu empresa.</p>
+                </div>
+                <div class="workshop-item rv d3">
+                    <h3>04 // Certificación</h3>
+                    <p>Obtén tu certificación digital de "Rediseño de Procesos con IA" avalada por Sinapsis OS para tu
+                        perfil profesional.</p>
+                </div>
+            </div>
+
+            <div class="price-box rv">
+                <div class="s-num" style="color:var(--g);">[ PRECIO EARLY BIRD ]</div>
+                <div style="font-size: 1.2rem; opacity: 0.5; text-decoration: line-through; margin-bottom: -0.5rem; color: var(--w);">S/ 597.00 / $157 USD</div>
+                <div class="price-tag">S/ 387.00 <span style="font-size: 1.5rem; opacity: 0.7;">/ $97 USD</span></div>
+                <p class="price-sub">// SOLO 20 CUPOS TOTALES POR EDICIÓN</p>
+                
+                <a href="https://t.me/SinapsisAgente_bot?start=workshop" class="btn btn-g btn-full"
+                    style="font-size: 1.1rem; padding: 1.4rem; box-shadow: 0 0 30px var(--g-gl);">
+                    RESERVAR MI CUPO EN TELEGRAM →
+                </a>
+
+                <div class="bonus-alert">
+                    <p>🎁 <strong>GARANTÍA SINAPSIS:</strong> El 100% de tu entrada se abona como crédito a tu favor para la implementación de tu primer Agente. El taller es virtualmente GRATIS.</p>
+                </div>
+            </div>
+
+            <!-- TABLA COMPARATIVA -->
+            <div class="rv" style="margin-top: 6rem;">
+                <div class="s-hdr" style="justify-content:center;">
+                    <h2 class="s-title">El Atajo vs. <em>La Vía Larga</em></h2>
+                </div>
+                <div class="prob-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 2rem;">
+                    <div class="prob-item" style="opacity:0.6;">
+                        <h4 style="color:var(--w30);">VÍA MANUAL</h4>
+                        <p style="font-size:0.75rem;">6 meses de frustración intentando entender la IA solo. Gastando en herramientas que no usas.</p>
+                    </div>
+                    <div class="prob-item" style="border: 2px solid var(--g); background: var(--b700);">
+                        <h4 style="color:var(--g);">ESTE WORKSHOP</h4>
+                        <p style="font-size:0.85rem; font-weight:700;">3 horas para dominar la lógica. Materiales listos para copiar y usar en tu empresa hoy.</p>
+                    </div>
+                    <div class="prob-item" style="opacity:0.8;">
+                        <h4 style="color:var(--c);">SINAPSIS OS</h4>
+                        <p style="font-size:0.75rem;">Implementación experta en 30 días. Automatización llave en mano escalable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULTADOS SIMPLES -->
+            <div class="rv" style="margin: 6rem 0;">
+                <div class="s-hdr" style="justify-content:center;">
+                    <h2 class="s-title">Resultados <em>Típicos</em></h2>
+                </div>
+                <div class="hero-stats" style="margin-top: 2rem; border-color: var(--bline-h);">
+                    <div class="h-stat">
+                        <div class="h-stat-num" style="font-size:1.8rem;">15h</div>
+                        <div class="h-stat-lbl">HORAS AHORRADAS / SEMANA</div>
+                    </div>
+                    <div class="h-stat">
+                        <div class="h-stat-num" style="font-size:1.8rem;">< 5m</div>
+                        <div class="h-stat-lbl">LATENCIA DE ALERTA</div>
+                    </div>
+                    <div class="h-stat">
+                        <div class="h-stat-num" style="font-size:1.8rem;">0</div>
+                        <div class="h-stat-lbl">CÓDIGO REQUERIDO</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <!-- FACILITADOR -->
+            <div class="rv facilitador-box" style="margin: 8rem 0; background: var(--b700); border: 1px solid var(--bline); padding: 3rem; display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: center; border-left: 4px solid var(--g);">
+                <div class="facilitador-img" style="background: var(--b800); border: 1px solid var(--bline); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--g); box-shadow: 0 0 20px var(--g-gl);">
+                    RC
+                </div>
+                <div style="text-align: left;">
+                    <div class="s-num" style="color:var(--g); margin-bottom: 0.5rem;">[ EL FACILITADOR ]</div>
+                    <h2 class="s-title" style="font-size:1.8rem; margin-bottom: 1rem;">Ricardo <em>Cuba</em></h2>
+                    <p style="color:var(--w70); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                        AI Strategist & Fundador de <b>Sinapsis OS</b>. Especialista en arquitectura de agentes autónomos y rediseño operativo para PyMEs en LATAM.
+                    </p>
+                    <ul style="list-style: none; padding: 0; color: var(--w50); font-size: 0.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                        <li>▸ +50 procesos automatizados con éxito.</li>
+                        <li>▸ Experto en Ingeniería de Prompts (Claude).</li>
+                        <li>▸ Especialista en Low-Code (n8n, Make).</li>
+                        <li>▸ Creador del framework <i>Agentic Canvas</i>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section id="faq" class="rv" style="padding-bottom: 8rem;">
+            <div class="s-hdr">
+                <span class="s-num">FAQ //</span>
+                <h2 class="s-title">¿Es para mí?</h2>
+            </div>
+            <div class="prob-grid">
+                <div class="prob-item">
+                    <h4>¿Necesito saber programar?</h4>
+                    <p>Absolutamente NO. El taller está diseñado para dueños de negocio. Si sabes usar Excel y tienes
+                        sentido común, puedes diseñar un Agente.</p>
+                </div>
+                <div class="prob-item">
+                    <h4>¿Quedará grabado?</h4>
+                    <p>Sí, todos los inscritos recibirán la grabación por 7 días, pero la magia ocurre en vivo durante
+                        las dinámicas de grupo.</p>
+                </div>
+                <div class="prob-item">
+                    <h4>¿Qué herramientas usaremos?</h4>
+                    <p>Claude (Anthropic) y Telegram. Te daremos guías para configurar tus cuentas antes de empezar.</p>
+                </div>
+                <div class="prob-item">
+                    <h4>¿Cómo se paga?</h4>
+                    <p>Al hacer clic en el botón, nuestro Agente de Triage en Telegram te guiará con los métodos de pago
+                        disponibles (Yape/Plin/Transferencia/Tarjeta).</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container f-in">
+            <span class="logo" style="text-decoration:none;">SINAPSIS_<em>OS</em> <span class="ver">v2.1</span></span>
+            <p>© 2026 · Desplegado por Ricardo Cuba · Automatización sin excusas</p>
+            <a href="dashboard.html">// ver demo dashboard →</a>
+        </div>
+    </footer>
+
+    <div class="statusbar">
+        <span class="s-live">WORKSHOP MODE: ACTIVE</span>
+        <span>REGISTRATIONS OPEN</span>
+        <span id="sb-time">SYS_TIME: --:--:--</span>
+        <span class="ml">SINAPSIS_OS Workshop Portal</span>
+    </div>
+
+    <script>
+        // Status bar clock
+        setInterval(() => {
+            const n = new Date();
+            document.getElementById('sb-time').textContent = `SYS_TIME: ${n.toLocaleTimeString('es-PE', { hour12: false })}`;
+        }, 1000);
+
+        // Scarcity Counter
+        function updateSlots() {
+            const el = document.getElementById('slots-left');
+            if(!el) return;
+            const current = parseInt(el.textContent.replace('SOLO ', '')) || 6;
+            // Simulated random decrease
+            if (current > 3 && Math.random() > 0.85) {
+                el.textContent = `SOLO ${current - 1}`;
+                el.style.animation = 'blink 0.5s 3';
+            }
+        }
+        setInterval(updateSlots, 15000); // Check every 15s
+
+        // Reveal animations
+        const rio = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.rv').forEach(el => rio.observe(el));
+    </script>
+</body>
+
+</html>
