@@ -1,0 +1,159 @@
+/* =================================================================
+   SINAPSIS_UX.CSS — Premium OS High-Fidelity (Global Engine)
+   Unified Design System for Landing & Workshop
+================================================================= */
+
+:root {
+    --glass: rgba(10, 10, 10, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --neon-green-glow: 0 0 25px rgba(0, 255, 110, 0.28);
+    --neon-cyan-glow: 0 0 25px rgba(0, 229, 255, 0.28);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* == DYNAMIC MESH BACKGROUND == */
+.mesh-bg {
+    position: fixed; inset: 0; z-index: -1;
+    background-color: #000;
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(146,100%,50%,0.09) 0, transparent 50%), 
+        radial-gradient(at 50% 0%, hsla(186,100%,50%,0.09) 0, transparent 50%), 
+        radial-gradient(at 100% 10%, hsla(146,100%,50%,0.09) 0, transparent 50%),
+        radial-gradient(at 50% 100%, hsla(186,100%,50%,0.06) 0, transparent 50%);
+    filter: blur(80px);
+    animation: meshRotate 25s ease infinite alternate;
+}
+
+@keyframes meshRotate {
+    0% { transform: scale(1) translate(0, 0); opacity: 0.75; }
+    100% { transform: scale(1.15) translate(3% , 2%); opacity: 1; }
+}
+
+/* == GLASS PANELS == */
+.glass-card {
+    background: var(--glass) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: all 0.4s var(--ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,255,110,0.06) 0%, transparent 40%);
+    opacity: 0; transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+.glass-card:hover {
+    border-color: rgba(0,255,110,0.4) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0,255,110,0.18);
+}
+
+.glass-card:hover::before { opacity: 1; }
+
+/* == SCAN LINE EFFECT == */
+.scan-line-card::after {
+    content: ''; position: absolute; top: -110%; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, transparent 0%, var(--g) 50%, transparent 100%);
+    opacity: 0.5;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.glass-card:hover.scan-line-card::after {
+    animation: cardScanPremium 1.4s var(--ease);
+}
+
+@keyframes cardScanPremium {
+    0% { top: -10%; opacity: 0; }
+    15% { opacity: 0.7; }
+    85% { opacity: 0.4; }
+    100% { top: 110%; opacity: 0; }
+}
+
+/* == GLITCH TEXT == */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.9;
+}
+
+.glitch-text:hover::before {
+    animation: glitchAnimGlobal 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: var(--g); z-index: -1;
+}
+
+.glitch-text:hover::after {
+    animation: glitchAnimGlobal 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: var(--c); z-index: -2;
+}
+
+@keyframes glitchAnimGlobal {
+    0% { transform: translate(0); }
+    15% { transform: translate(-3px, 2px); }
+    30% { transform: translate(-3px, -2px); }
+    50% { transform: translate(3px, 3px); }
+    70% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
+}
+
+/* == TYPING ANIMATION == */
+.typing-line {
+    border-right: 2px solid var(--g);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typingGlobal 4s steps(40, end), blink-caret 0.8s step-end infinite;
+}
+
+@keyframes typingGlobal { from { width: 0 } to { width: 100% } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--g); } }
+
+/* == BUTTON PREMIUM GLOW == */
+.btn-premium {
+    position: relative !important;
+    background: var(--g) !important;
+    color: var(--black) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.12em !important;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s var(--ease) !important;
+    border: none !important;
+}
+
+.btn-premium::after {
+    content: '';
+    position: absolute; top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 60%);
+    transform: scale(0);
+    transition: transform 0.8s var(--ease);
+    z-index: -1;
+}
+
+.btn-premium:hover::after { transform: scale(1); }
+.btn-premium:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 45px var(--g-gw) !important;
+    background: var(--w) !important;
+}
+
+/* == HIGHLIGHT REVEAL == */
+.reveal-high {
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}

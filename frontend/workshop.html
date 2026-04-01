@@ -8,6 +8,7 @@
     <meta name="description"
         content="Taller intensivo de 3 horas para dueños de PyMEs. Diseña tu primer empleado digital sin programar. Cupos limitados.">
     <link rel="stylesheet" href="commercial.css">
+    <link rel="stylesheet" href="sinapsis_ux.css">
     <style>
         .workshop-hero {
             padding: 8rem 0 4rem;
@@ -98,6 +99,7 @@
 </head>
 
 <body>
+    <div class="mesh-bg" aria-hidden="true"></div>
     <div class="os-glow" aria-hidden="true"></div>
     <div class="os-grid" aria-hidden="true"></div>
     <div class="os-scan" aria-hidden="true"></div>
@@ -119,8 +121,8 @@
                 ONLINE · 3 HORAS · <span id="slots-left" style="color:var(--y);font-weight:800;">SOLO 6</span>/20 CUPOS EARLY BIRD
             </div>
             <h1>
-                Diseña tu primer<br>
-                <em id="tw-niche">Empleado Digital</em>.
+                <span class="glitch-text" data-text="Diseña tu primer">Diseña tu primer</span><br>
+                <em id="tw-niche" class="typing-line">Empleado Digital</em>.
             </h1>
             <p class="hero-sub" style="margin: 0 auto 2rem;">
                 Workshop intensivo para dueños de PyMEs que quieren dejar de ser el cuello de botella. Aprende la lógica
@@ -128,35 +130,38 @@
             </p>
 
             <div class="workshop-grid">
-                <div class="workshop-item rv">
+                <div class="workshop-item glass-card scan-line-card rv">
                     <h3>01 // Auditoría Lógica</h3>
                     <p>Usa el "Agentic Canvas" para mapear tu proceso más doloroso y convertirlo en una serie de pasos
                         que una IA pueda ejecutar con precisión quirúrgica.</p>
                 </div>
-                <div class="workshop-item rv d1">
+                <div class="workshop-item glass-card scan-line-card rv d1">
                     <h3>02 // Laboratorio Claude</h3>
                     <p>Importa una arquitectura de prompt real. Crea tu "Claude Project". Ejecuta y mira cómo la IA razona y entrega resultados bajo tus propias reglas de negocio.</p>
                 </div>
-                <div class="workshop-item rv d2">
+                <div class="workshop-item glass-card scan-line-card rv d2">
                     <h3>03 // El Efecto ROI</h3>
                     <p>Calcularemos cuántas horas y dólares recuperas al mes. No saldrás con teoría, saldrás con un plan
                         de implementación listo para tu empresa.</p>
                 </div>
-                <div class="workshop-item rv d3">
+                <div class="workshop-item glass-card scan-line-card rv d3">
                     <h3>04 // Certificación</h3>
                     <p>Obtén tu certificación digital de "Rediseño de Procesos con IA" avalada por Sinapsis OS para tu
                         perfil profesional.</p>
                 </div>
             </div>
 
-            <div class="price-box rv">
+            <div class="price-box glass-card rv">
                 <div class="s-num" style="color:var(--g);">[ PRECIO EARLY BIRD ]</div>
-                <div style="font-size: 1.2rem; opacity: 0.5; text-decoration: line-through; margin-bottom: -0.5rem; color: var(--w);">S/ 597.00 / $157 USD</div>
-                <div class="price-tag">S/ 387.00 <span style="font-size: 1.5rem; opacity: 0.7;">/ $97 USD</span></div>
-                <p class="price-sub">// SOLO 20 CUPOS TOTALES POR EDICIÓN</p>
+                <div style="font-size: 1.1rem; text-decoration: line-through; margin-bottom: -0.5rem; color: var(--w30);">$157 USD / S/ 597.00</div>
+                <div class="price-tag" style="display: flex; flex-direction: column; align-items: center; gap: 0.2rem; margin: 1.5rem 0;">
+                    <span style="font-size: 3.5rem; line-height: 1; color: var(--w); font-weight: 800; text-shadow: 0 0 30px var(--g-gl);">$97 USD</span>
+                    <span style="font-size: 1.25rem; font-weight: 400; color: var(--w50);">≈ S/ 387.00</span>
+                </div>
+                <p class="price-sub" style="color: var(--g); opacity: 0.8;">// SOLO 20 CUPOS (HASTA EL 10 DE ABRIL)</p>
                 
-                <a href="https://t.me/SinapsisAgente_bot?start=workshop" class="btn btn-g btn-full"
-                    style="font-size: 1.1rem; padding: 1.4rem; box-shadow: 0 0 30px var(--g-gl);">
+                <a href="https://t.me/SinapsisAgente_bot?start=workshop" class="btn btn-premium btn-full"
+                    style="font-size: 1.1rem; padding: 1.4rem;">
                     RESERVAR MI CUPO EN TELEGRAM →
                 </a>
 
@@ -171,16 +176,16 @@
                     <h2 class="s-title">El Atajo vs. <em>La Vía Larga</em></h2>
                 </div>
                 <div class="prob-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 2rem;">
-                    <div class="prob-item" style="opacity:0.6;">
+                    <div class="prob-item glass-card" style="opacity:0.6;">
                         <h4 style="color:var(--w30);">VÍA MANUAL</h4>
                         <p style="font-size:0.75rem;">6 meses de frustración intentando entender la IA solo. Gastando en herramientas que no usas.</p>
                     </div>
-                    <div class="prob-item" style="border: 2px solid var(--g); background: var(--b700);">
+                    <div class="prob-item glass-card scan-line-card" style="border: 2px solid var(--g); background: var(--b700);">
                         <h4 style="color:var(--g);">ESTE WORKSHOP</h4>
                         <p style="font-size:0.85rem; font-weight:700;">3 horas para dominar la lógica. Materiales listos para copiar y usar en tu empresa hoy.</p>
                     </div>
-                    <div class="prob-item" style="opacity:0.8;">
-                        <h4 style="color:var(--c);">SINAPSIS OS</h4>
+                    <div class="prob-item glass-card" style="opacity:0.8;">
+                        <h4 style="color:var(--c);">SINAPSIS_OS</h4>
                         <p style="font-size:0.75rem;">Implementación experta en 30 días. Automatización llave en mano escalable.</p>
                     </div>
                 </div>
@@ -209,7 +214,7 @@
         </section>
 
             <!-- FACILITADOR -->
-            <div class="rv facilitador-box" style="margin: 8rem 0; background: var(--b700); border: 1px solid var(--bline); padding: 3rem; display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: center; border-left: 4px solid var(--g);">
+            <div class="rv facilitador-box glass-card scan-line-card" style="margin: 8rem 0; background: var(--b700); border: 1px solid var(--bline); padding: 3rem; display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: center; border-left: 4px solid var(--g);">
                 <div class="facilitador-img" style="background: var(--b800); border: 1px solid var(--bline); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--g); box-shadow: 0 0 20px var(--g-gl);">
                     RC
                 </div>

@@ -28,8 +28,6 @@
     --y:       #ffe84d;      /* yellow accent */
 
     --grad:    linear-gradient(90deg, #00ff6e 0%, #00e5ff 100%);
-    --grad-45: linear-gradient(135deg, #00ff6e 0%, #00e5ff 100%);
-    --grad-dk: linear-gradient(135deg, rgba(0,255,110,0.04) 0%, rgba(0,229,255,0.04) 100%);
 
     --w:       #ffffff;
     --w90:     rgba(255,255,255,0.90);
@@ -280,32 +278,7 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
 .ticker-inner span { color: var(--g); }
 @keyframes ticker { from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
-/* ===== PROBLEM GRID ===== */
-.prob-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 1px; background: var(--bline);
-    border: 1px solid var(--bline);
-}
-.prob-item {
-    background: var(--b800); padding: 1.75rem;
-    transition: background 0.2s; position: relative; overflow: hidden;
-}
-.prob-item::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: var(--grad-45); transform: scaleX(0);
-    transition: transform 0.35s var(--ease); transform-origin: left;
-}
-.prob-item:hover { background: var(--b700); }
-.prob-item:hover::before { transform: scaleX(1); }
-.prob-icon { font-size: 1.2rem; margin-bottom: 0.6rem; }
-.prob-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; }
-.prob-item p { font-size: 0.8rem; color: var(--w70); }
-.prob-cost {
-    display: inline-block; margin-top: 0.75rem;
-    font-size: 0.6rem; color: var(--y); letter-spacing: 0.08em;
-    border: 1px solid rgba(255,232,77,0.25);
-    background: rgba(255,232,77,0.04); padding: 0.2rem 0.5rem;
-}
+/* ===== PROBLEM GRID (OBSOLETE) ===== */
 
 /* ===== AGENT CARDS ===== */
 .agents-grid {
@@ -314,25 +287,11 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
     border: 1px solid var(--bline);
 }
 .agent-card {
-    background: var(--b800); padding: 2rem;
-    cursor: pointer; transition: background 0.2s var(--ease);
-    position: relative; overflow: hidden;
+    padding: 2rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
-.agent-card::after {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 3px; height: 100%;
-    background: var(--grad-45); transform: scaleY(0);
-    transition: transform 0.35s var(--ease); transform-origin: bottom;
-}
-.agent-card::before {
-    content: ''; position: absolute; inset: 0;
-    background: var(--grad-dk); opacity: 0; transition: opacity 0.25s;
-}
-.agent-card:hover { background: var(--b700); }
-.agent-card:hover::before { opacity: 1; }
-.agent-card:hover::after { transform: scaleY(1); }
-.agent-card:hover .a-num { color: rgba(0,255,110,0.12); -webkit-text-fill-color: unset; background: none; }
-.agent-card:hover .a-title { color: var(--g); }
 
 .a-num {
     font-size: 2.75rem; font-weight: 800; line-height: 1; margin-bottom: 1rem;
@@ -463,19 +422,7 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
     background: var(--c-gl); padding: 0.25rem 0.6rem;
 }
 
-/* ===== RESULTS ===== */
-.res-grid {
-    display: grid; grid-template-columns: repeat(4,1fr);
-    gap: 1px; background: var(--bline);
-    border: 1px solid var(--bline);
-}
-.res-item { background: var(--b800); padding: 1.75rem 1.5rem; transition: background .2s; }
-.res-item:hover { background: var(--b700); }
-.res-num {
-    font-size: 2rem; font-weight: 800;
-    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.res-lbl { font-size: 0.62rem; color: var(--w30); margin-top: 0.3rem; }
+/* ===== RESULTS (DISABLED DUE TO CLEANUP) ===== */
 
 /* ===== METHOD ===== */
 .method-grid {
@@ -483,8 +430,7 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
     gap: 1px; background: var(--bline);
     border: 1px solid var(--bline);
 }
-.m-step { background: var(--b800); padding: 1.75rem; transition: background .2s; }
-.m-step:hover { background: var(--b700); }
+.m-step { padding: 1.75rem; }
 .m-week { font-size: 0.58rem; letter-spacing: 0.18em; color: var(--g); margin-bottom: 0.6rem; }
 .m-week::before { content: '// '; }
 .m-step h4 { font-size: 0.82rem; font-weight: 700; margin-bottom: 0.5rem; }
@@ -496,8 +442,7 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
     gap: 1px; background: var(--bline);
     border: 1px solid var(--bline);
 }
-.pkg { background: var(--b800); padding: 2.25rem 2rem; display: flex; flex-direction: column; position: relative; }
-.pkg.hot { background: var(--b700); border-top: 2px solid var(--g); }
+.pkg { padding: 2.25rem 2rem; display: flex; flex-direction: column; position: relative; }
 .pkg-badge {
     position: absolute; top: 0; right: 1.5rem;
     background: var(--g); color: var(--black);
@@ -580,8 +525,7 @@ footer a:hover { color: var(--g); }
 /* ===== RESPONSIVE ===== */
 @media(max-width:1100px){.pkg-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){
-    .method-grid,.res-grid,.contact-inner,.m-io,.m-kpis{grid-template-columns:1fr;}
-    .prob-grid{grid-template-columns:1fr;}
+    .method-grid,.contact-inner,.m-io,.m-kpis{grid-template-columns:1fr;}
     .pkg-grid{grid-template-columns:1fr;}
 }
 @media(max-width:640px){
