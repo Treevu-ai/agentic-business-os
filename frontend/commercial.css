@@ -301,7 +301,7 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
 }
 .prob-item p {
     font-size: 0.72rem;
-    color: var(--w50);
+    color: var(--w70);
     line-height: 1.7;
 }
 
