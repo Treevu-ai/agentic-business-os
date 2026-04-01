@@ -182,14 +182,12 @@
                         <div class="a-footer"><span class="a-tag">Infra</span><span class="a-hint">detalles_</span>
                         </div>
                     </div>
-                    <!-- CTA CARD -->
-                    <div class="agent-card glass-card rv d3"
-                        style="border: 1px dashed var(--g) !important; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                        <h3 class="a-title" style="color: var(--g); font-size: 1.2rem;">Construye tu Nódulo</h3>
-                        <p class="a-desc" style="margin-bottom: 1.5rem;">Identifica qué agente tiene el mayor ROI para
-                            tu empresa hoy.</p>
-                        <a href="https://t.me/SinapsisAgente_bot" class="btn btn-premium" target="_blank"
-                            style="font-size: 0.75rem; padding: 0.8rem 1.4rem;">INICIAR DIAGNÓSTICO</a>
+                    <div class="agent-card glass-card scan-line-card rv d3" onclick="openAgent(12)" style="border-top: 2px solid var(--y) !important;">
+                        <div class="a-num" style="color: var(--y);">12</div>
+                        <div class="a-icon">🔐</div>
+                        <h3 class="a-title">Trust & Compliance</h3>
+                        <p class="a-desc">La capa que convierte automatización en confianza enterprise. Policy Engine, Audit Trail y AI Governance en un solo módulo.</p>
+                        <div class="a-footer"><span class="a-tag" style="color:var(--y); border-color:rgba(255,232,77,0.2); background:rgba(255,232,77,0.05);">PREMIUM</span><span class="a-hint">detalles_</span></div>
                     </div>
                 </div>
             </div>
@@ -397,7 +395,8 @@
             8: { tag: "PARTNERS", title: "Partner Economics", desc: "Administra red de afiliados y comisiones. Verifica cierres de ventas por referidos y liquida pagos automáticos.", roi: "+30%", save: "10h", pay: "1.5m" },
             9: { tag: "PRODUCT", title: "IP Monetization", desc: "Extrae insights de manuales y documentos internos para crear bases de conocimiento interactivas externas para clientes.", roi: "+40%", save: "25h", pay: "0.8m" },
             10: { tag: "STRATEGY", title: "Strategic Value", desc: "Consolida KPIs de todas las áreas en un reporte de valoración de empresa. Identifica activos intangibles para futuros levantamientos de capital.", roi: "+50%", save: "5h", pay: "6.0m" },
-            11: { tag: "INFRA", title: "Guardian OS", desc: "El nodo central de seguridad. Autentica y orquesta a todos los demás agentes mediante tokens, asegurando un entorno Zero-Trust y un audit log inmutable en MongoDB.", roi: "N/A", save: "100%", pay: "Day 1" }
+            11: { tag: "INFRA", title: "Guardian OS", desc: "El nodo central de seguridad. Autentica y orquesta a todos los demás agentes mediante tokens, asegurando un entorno Zero-Trust y un audit log inmutable en MongoDB.", roi: "N/A", save: "100%", pay: "Day 1" },
+            12: { tag: "PREMIUM", title: "Trust & Compliance Engine", desc: "Capa transversal de gobierno enterprise. Policy Engine dinámico, Audit Trail inmutable, Data Protection (GDPR/CCPA), AI Governance con explicabilidad y Compliance Dashboard en tiempo real.", roi: "+40%", save: "Auditable", pay: "Enterprise" }
         };
 
         function openAgent(id) {
