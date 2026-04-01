@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "functions": {
+    "api/agents/**/*.js": {
+      "maxDuration": 300
+    }
+  },
+  "routes": [
+    { "src": "^/$", "dest": "/frontend/index.html" },
+    { "src": "^/(.*)$", "dest": "/frontend/$1" }
+  ]
+}
