@@ -193,25 +193,26 @@
                 </div>
             </div>
 
-            <div class="workshop-grid">
-                <div class="workshop-item glass-card scan-line-card rv">
-                    <h3>01 // Auditoría Lógica</h3>
-                    <p>Usa el "Agentic Canvas" para mapear tu proceso más doloroso y convertirlo en una serie de pasos
-                        que una IA pueda ejecutar con precisión quirúrgica.</p>
+            <div class="method-grid" style="margin-top: 3rem;">
+                <div class="m-step glass-card scan-line-card rv">
+                    <div class="m-week">PASO 01 //</div>
+                    <h4>Auditoría Lógica</h4>
+                    <p>Usa el Lienzo Agéntico para mapear tu proceso más doloroso y convertirlo en pasos que una IA pueda ejecutar con precisión.</p>
                 </div>
-                <div class="workshop-item glass-card scan-line-card rv d1">
-                    <h3>02 // Laboratorio Claude</h3>
-                    <p>Importa una arquitectura de prompt real. Crea tu "Claude Project". Ejecuta y mira cómo la IA razona y entrega resultados bajo tus propias reglas de negocio.</p>
+                <div class="m-step glass-card scan-line-card rv d1">
+                    <div class="m-week">PASO 02 //</div>
+                    <h4>Laboratorio de IA</h4>
+                    <p>Importa una arquitectura de instrucciones real. Ejecuta y mira cómo la IA razona y entrega resultados bajo tus propias reglas de negocio.</p>
                 </div>
-                <div class="workshop-item glass-card scan-line-card rv d2">
-                    <h3>03 // El Efecto ROI</h3>
-                    <p>Calcularemos cuántas horas y dólares recuperas al mes. No saldrás con teoría, saldrás con un plan
-                        de implementación listo para tu empresa.</p>
+                <div class="m-step glass-card scan-line-card rv d2">
+                    <div class="m-week">PASO 03 //</div>
+                    <h4>El Efecto Retorno</h4>
+                    <p>Calcularemos cuántas horas y dinero recuperas al mes. Saldrás con un plan de implementación listo para tu empresa.</p>
                 </div>
-                <div class="workshop-item glass-card scan-line-card rv d3">
-                    <h3>04 // Certificación</h3>
-                    <p>Obtén tu certificación digital de "Rediseño de Procesos con IA" avalada por Sinapsis OS para tu
-                        perfil profesional.</p>
+                <div class="m-step glass-card scan-line-card rv d3">
+                    <div class="m-week">PASO 04 //</div>
+                    <h4>Certificación</h4>
+                    <p>Obtén tu certificación digital de "Rediseño de Procesos con IA" avalada por Sinapsis OS para tu perfil profesional.</p>
                 </div>
             </div>
 
@@ -390,6 +391,24 @@
     </div>
 
     <script>
+        // Contador regresivo — 14 de abril 2026, 08:00 hora Perú (UTC-5 = 13:00 UTC)
+        const FECHA_TALLER = new Date('2026-04-14T13:00:00Z');
+        function actualizarContador() {
+            const ahora = new Date();
+            const diff = FECHA_TALLER - ahora;
+            const el = (id, v) => { const e = document.getElementById(id); if(e) e.textContent = v; };
+            if (diff <= 0) {
+                ['cd-dias','cd-horas','cd-min','cd-seg'].forEach(id => el(id, '00'));
+                return;
+            }
+            el('cd-dias',  String(Math.floor(diff / 86400000)).padStart(2,'0'));
+            el('cd-horas', String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0'));
+            el('cd-min',   String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0'));
+            el('cd-seg',   String(Math.floor((diff % 60000) / 1000)).padStart(2,'0'));
+        }
+        actualizarContador();
+        setInterval(actualizarContador, 1000);
+
         // Status bar clock
         setInterval(() => {
             const n = new Date();
