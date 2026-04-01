@@ -278,7 +278,32 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
 .ticker-inner span { color: var(--g); }
 @keyframes ticker { from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
-/* ===== PROBLEM GRID (OBSOLETE) ===== */
+/* ===== PROBLEM GRID ===== */
+.prob-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--bline);
+    border: 1px solid var(--bline);
+    margin-top: 2rem;
+}
+.prob-item {
+    background: var(--b800);
+    padding: 2rem;
+    position: relative;
+}
+.prob-item h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--w);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+}
+.prob-item p {
+    font-size: 0.72rem;
+    color: var(--w50);
+    line-height: 1.7;
+}
 
 /* ===== AGENT CARDS ===== */
 .agents-grid {
