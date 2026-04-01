@@ -1,6 +1,6 @@
 /* ==========================================================
-   SINAPSIS_OS // OS WORKSPACE CONTROLLER
-   Manages 10-Agent Interactive Demo
+   SINAPSIS_OS // CONTROLADOR DEL WORKSPACE
+   Demo interactiva — 10 Agentes de Negocio
 ========================================================== */
 
 const AGENTS = [
@@ -14,10 +14,10 @@ const AGENTS = [
             { id: 'rev-thr', label: 'UMBRAL DE ALERTA (%)', value: '-15%' }
         ],
         lines: [
-            '> Connecting to CRM database...',
-            '> Analyzing 15,204 historical deals...',
-            '> Calculating weekly variance...',
-            '> Detecting anomalies in Q3 pipeline...'
+            '> Conectando a base de datos CRM...',
+            '> Analizando 15,204 transacciones históricas...',
+            '> Calculando varianza semanal de ingresos...',
+            '> Detectando anomalías en el pipeline Q3...'
         ],
         outTemplate: () => `
             <div class="lead-item">
@@ -38,10 +38,10 @@ const AGENTS = [
             { id: 'region', label: 'REGIÓN / CIUDAD', value: 'Lima, Perú' }
         ],
         lines: [
-            '> Initializing web crawler... OK',
-            '> Executing regional search parameters...',
-            '> Bypassing bot protection...',
-            '> Enriching contacts via Apollo/LinkedIn API...'
+            '> Iniciando crawler web... OK',
+            '> Ejecutando parámetros de búsqueda regional...',
+            '> Procesando fuentes de datos públicas...',
+            '> Enriqueciendo contactos vía Apollo/LinkedIn API...'
         ],
         // The GTM agent will use the real API or fallback to mock
         isRealApi: true
@@ -56,10 +56,10 @@ const AGENTS = [
             { id: 'tal-team', label: 'EQUIPO', value: 'Diseño & Desarrollo' }
         ],
         lines: [
-            '> Syncing project management boards...',
-            '> Aggregating time estimations...',
-            '> Detecting overloaded assignees...',
-            '> Cross-referencing with Google Calendar...'
+            '> Sincronizando tableros de gestión de proyectos...',
+            '> Agregando estimaciones de tiempo por tarea...',
+            '> Detectando colaboradores con sobrecarga...',
+            '> Cruzando datos con Google Calendar...'
         ],
         outTemplate: () => `
             <div class="lead-item">
@@ -81,10 +81,10 @@ const AGENTS = [
             { id: 'pri-comp', label: 'COMPETIDORES', value: 'Top 3 Regionales' }
         ],
         lines: [
-            '> Scraping competitor pricing pages...',
-            '> Normalizing service tiers...',
-            '> Calculating margin delta...',
-            '> Generating pricing recommendation...'
+            '> Escaneando páginas de precios de competidores...',
+            '> Normalizando niveles de servicio del mercado...',
+            '> Calculando delta de margen actual vs. mercado...',
+            '> Generando recomendación de precios optimizada...'
         ],
         outTemplate: () => `
             <div class="lead-item">
@@ -106,10 +106,10 @@ const AGENTS = [
             { id: 'sup-lt', label: 'LEAD TIME PROMEDIO', value: '45 días (Importación)' }
         ],
         lines: [
-            '> Syncing ERP inventory levels...',
-            '> Analyzing 12-month sales velocity...',
-            '> Calculating safety stock thresholds...',
-            '> Generating purchase orders...'
+            '> Sincronizando niveles de inventario con ERP...',
+            '> Analizando velocidad de ventas — últimos 12 meses...',
+            '> Calculando umbrales de stock de seguridad...',
+            '> Generando órdenes de compra preventivas...'
         ],
         outTemplate: () => `
             <div class="lead-item">
@@ -131,10 +131,10 @@ const AGENTS = [
             { id: 'csm-data', label: 'MÉTRICAS', value: 'Uso Plataforma + Tickets Soporte' }
         ],
         lines: [
-            '> Analyzing product telemetry...',
-            '> Scanning support ticket sentiment...',
-            '> Correlating NPS scores with usage drop...',
-            '> Identifying high-risk accounts...'
+            '> Analizando telemetría de uso del producto...',
+            '> Escaneando sentimiento en tickets de soporte...',
+            '> Correlacionando NPS con caída de actividad...',
+            '> Identificando cuentas en riesgo de cancelación...'
         ],
         outTemplate: () => `
             <div class="lead-item">
@@ -156,10 +156,10 @@ const AGENTS = [
             { id: 'com-kw', label: 'CLÁUSULAS', value: 'Renovación automática, Exclusividad' }
         ],
         lines: [
-            '> Ingesting 142 PDF contracts...',
-            '> Running NLP semantic parsing...',
-            '> Extracting dates and liability clauses...',
-            '> Compiling compliance dashboard...'
+            '> Ingiriendo 142 contratos en formato PDF...',
+            '> Ejecutando análisis semántico con PLN...',
+            '> Extrayendo fechas y cláusulas de responsabilidad...',
+            '> Compilando panel de vencimientos críticos...'
         ],
         outTemplate: () => `
             <div class="lead-item">
@@ -181,14 +181,14 @@ const AGENTS = [
             { id: 'mki-tr', label: 'TRACKING_ID', value: 'Competidor Alfa, Competidor Beta' }
         ],
         lines: [
-            '> Scraping public tender portals...',
-            '> Monitoring competitor social feeds...',
-            '> Aggregating industry news...',
-            '> Generating executive brief...'
+            '> Escaneando portales de licitaciones públicas...',
+            '> Monitoreando redes sociales de competidores...',
+            '> Agregando noticias relevantes del sector...',
+            '> Generando briefing ejecutivo semanal...'
         ],
         outTemplate: () => `
             <div class="lead-item">
-                <h4>📰 OPPORTUNITY RADAR</h4>
+                <h4>📰 RADAR DE OPORTUNIDADES</h4>
                 <div class="lead-meta"><span>Licitación Pública</span> detectada</div>
                 <div class="lead-draft">
                     Se publicó una nueva licitación que coincide 92% con tu perfil de servicios (Desarrollo B2B).
@@ -206,15 +206,15 @@ const AGENTS = [
             { id: 'ops-ou', label: 'ACTIONS', value: 'Crear Drive, Slack, Asana, Email' }
         ],
         lines: [
-            '> Listening for webhook trigger...',
-            '> Webhook received. Parsing payload...',
-            '> Executing multi-platform API calls...',
-            '> Validating state consistency...'
+            '> Escuchando trigger de webhook... activo',
+            '> Webhook recibido. Procesando payload...',
+            '> Ejecutando llamadas a múltiples plataformas...',
+            '> Validando consistencia de estado en todos los sistemas...'
         ],
         outTemplate: () => `
             <div class="lead-item">
-                <h4>✅ WORKFLOW EJECUTADO</h4>
-                <div class="lead-meta"><span>Zero-Touch</span> automation</div>
+                <h4>✅ FLUJO DE TRABAJO EJECUTADO</h4>
+                <div class="lead-meta"><span>Sin intervención</span> humana</div>
                 <div class="lead-draft">
                     Cliente 'Logística Sur' firmado. 
                     - Carpeta de Drive creada.
@@ -234,14 +234,14 @@ const AGENTS = [
             { id: 'cmd-out', label: 'OUTPUT CHANNEL', value: 'WhatsApp + Executive Email' }
         ],
         lines: [
-            '> Polling active agent subnet...',
-            '> Aggregating 14 system alerts...',
-            '> LLM prioritizing by revenue impact...',
-            '> Transmitting AM briefing...'
+            '> Consultando subred de agentes activos...',
+            '> Agregando 14 alertas del sistema...',
+            '> Priorizando por impacto en ingresos (IA)...',
+            '> Transmitiendo briefing ejecutivo de la mañana...'
         ],
         outTemplate: () => `
             <div class="lead-item" style="border-left-color:var(--y);">
-                <h4>👑 DAILY EXECUTIVE BRIEFING</h4>
+                <h4>👑 BRIEFING EJECUTIVO DIARIO</h4>
                 <div class="lead-meta"><span style="color:var(--y);">Prioridad</span> Alta</div>
                 <div class="lead-draft">
                     Buenos días. Resumen operativo de hoy:

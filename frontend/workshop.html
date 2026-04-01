@@ -167,17 +167,27 @@
 
     <main class="container">
         <section class="workshop-hero">
-            <div class="hero-badge">
-                <span class="ping"></span>
-                EN LÍNEA · 3 HORAS · <span id="slots-left" style="color:var(--y);font-weight:800;">SOLO 6</span>/20 CUPOS PRECIO ESPECIAL
+            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 1.5rem;">
+                <div class="hero-badge" style="display:inline-flex;">
+                    <span class="ping"></span>
+                    EN LÍNEA · 3 HORAS EN VIVO
+                </div>
+                <div class="hero-badge" style="display:inline-flex; border-color:rgba(255,232,77,0.3); color:var(--y);">
+                    SOLO <span id="slots-left" style="font-weight:800; margin: 0 0.3em;">6</span>/20 CUPOS · PRECIO ESPECIAL HASTA EL 10 DE ABRIL
+                </div>
+                <div class="hero-badge" style="display:inline-flex; border-color:rgba(0,229,255,0.3); color:var(--c);">
+                    DISEÑADO PARA DUEÑOS DE PYMES EN LATAM
+                </div>
             </div>
             <h1>
-                <span class="glitch-text" data-text="Diseña tu primer">Diseña tu primer</span><br>
-                <em id="tw-niche" class="typing-line">Empleado Digital</em>.
+                <span class="glitch-text" data-text="Workshop Online:">Workshop Online:</span><br>
+                Diseña tu Primer<br>
+                <em id="tw-niche">Empleado Digital</em><br>
+                en 3 Horas.
             </h1>
             <p class="hero-sub" style="margin: 0 auto 1rem;">
-                Workshop intensivo para dueños de PyMEs que quieren dejar de ser el cuello de botella. Aprende la lógica
-                de los Agentes de IA y mira cómo trabajan por ti — sin tocar una sola línea de código.
+                Pasa de ser el cuello de botella a tener un Agente de IA trabajando por ti todos los días —
+                sin escribir una sola línea de código.
             </p>
 
             <!-- FECHA + COUNTDOWN -->
@@ -227,78 +237,105 @@
                 
                 <a href="https://t.me/SinapsisAgente_bot?start=workshop" class="btn btn-premium btn-full"
                     style="font-size: 1.1rem; padding: 1.4rem;">
-                    RESERVAR MI CUPO EN TELEGRAM →
+                    QUIERO DISEÑAR MI EMPLEADO DIGITAL →
                 </a>
 
                 <div class="bonus-alert">
-                    <p>🎁 <strong>GARANTÍA SINAPSIS:</strong> El 100% de tu entrada se abona como crédito a tu favor para la implementación de tu primer Agente. El taller es virtualmente GRATIS.</p>
+                    <p>🎁 <strong>GARANTÍA SINAPSIS:</strong> El 100% de tu entrada se convierte en crédito para implementar tu primer Agente de IA real en tu empresa. No es un descuento — es inversión directa en tu operación.</p>
+                </div>
+            </div>
+
+            <!-- PARA QUIÉN ES -->
+            <div class="rv" style="margin-top: 6rem;">
+                <div class="s-hdr" style="justify-content:center;">
+                    <h2 class="s-title">¿Este taller es <em>para ti</em>?</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--bline); border: 1px solid var(--bline); margin-top: 2rem;">
+                    <div style="background: var(--b700); padding: 2rem; border-left: 3px solid var(--g);">
+                        <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 1rem;">// SÍ ES PARA TI SI...</div>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
+                            <li style="font-size: 0.8rem; color: var(--w); display: flex; gap: 0.6rem;"><span style="color:var(--g); flex-shrink:0;">✓</span> Eres dueño o gerente de una PyME de 2 a 50 personas</li>
+                            <li style="font-size: 0.8rem; color: var(--w); display: flex; gap: 0.6rem;"><span style="color:var(--g); flex-shrink:0;">✓</span> Tienes procesos repetitivos que consumen tiempo de tu equipo</li>
+                            <li style="font-size: 0.8rem; color: var(--w); display: flex; gap: 0.6rem;"><span style="color:var(--g); flex-shrink:0;">✓</span> Quieres implementar IA pero sin depender de un técnico</li>
+                            <li style="font-size: 0.8rem; color: var(--w); display: flex; gap: 0.6rem;"><span style="color:var(--g); flex-shrink:0;">✓</span> Estás listo para invertir 3 horas en cambiar cómo opera tu negocio</li>
+                        </ul>
+                    </div>
+                    <div style="background: var(--b800); padding: 2rem; border-left: 3px solid rgba(255,95,87,0.5);">
+                        <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--w50); margin-bottom: 1rem;">// NO ES PARA TI SI...</div>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
+                            <li style="font-size: 0.8rem; color: var(--w70); display: flex; gap: 0.6rem;"><span style="color:#ff5f57; flex-shrink:0;">✕</span> Buscas un curso de programación o código</li>
+                            <li style="font-size: 0.8rem; color: var(--w70); display: flex; gap: 0.6rem;"><span style="color:#ff5f57; flex-shrink:0;">✕</span> Quieres teoría sin aplicación inmediata</li>
+                            <li style="font-size: 0.8rem; color: var(--w70); display: flex; gap: 0.6rem;"><span style="color:#ff5f57; flex-shrink:0;">✕</span> No tienes un proceso específico que quieras automatizar</li>
+                            <li style="font-size: 0.8rem; color: var(--w70); display: flex; gap: 0.6rem;"><span style="color:#ff5f57; flex-shrink:0;">✕</span> Prefieres esperar 6 meses antes de dar el primer paso</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- TABLA COMPARATIVA -->
             <div class="rv" style="margin-top: 6rem;">
                 <div class="s-hdr" style="justify-content:center;">
-                    <h2 class="s-title">El Atajo vs. <em>La Vía Larga</em></h2>
+                    <h2 class="s-title">Dos caminos.<br><em>Una decisión.</em></h2>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--bline); border: 1px solid var(--bline); margin-top: 2rem;">
-                    <!-- VÍA MANUAL -->
+                    <!-- OPCIÓN A -->
                     <div style="background: var(--b800); padding: 2.5rem 2rem; position: relative; opacity: 0.75;">
                         <div style="font-size: 0.6rem; letter-spacing: 0.18em; color: var(--w50); margin-bottom: 1rem;">// OPCIÓN A</div>
-                        <h4 style="color: var(--w); font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem;">Vía Manual</h4>
+                        <h4 style="color: var(--w); font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem;">Lo Intentas Solo</h4>
                         <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
-                            <li style="font-size: 0.72rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> 6+ meses intentando entender la IA solo
+                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
+                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> 6+ meses de ensayo y error sin estructura
                             </li>
-                            <li style="font-size: 0.72rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> Gastando en herramientas que no usas
+                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
+                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> Pagando herramientas que no sabes cómo usar
                             </li>
-                            <li style="font-size: 0.72rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> Sin estructura ni metodología probada
+                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
+                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> Sin metodología probada en empresas reales
                             </li>
-                            <li style="font-size: 0.72rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> Frustración y abandono a mitad de camino
+                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
+                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> Frustración, abandono y pérdida de tiempo valioso
                             </li>
                         </ul>
                     </div>
-                    <!-- ESTE WORKSHOP -->
+                    <!-- OPCIÓN B — ESTE WORKSHOP -->
                     <div style="background: var(--b700); padding: 2.5rem 2rem; border: 2px solid var(--g); border-top: 4px solid var(--g); position: relative; z-index: 1; box-shadow: 0 0 40px rgba(0,255,110,0.08);">
-                        <div style="font-size: 0.6rem; letter-spacing: 0.18em; color: var(--g); margin-bottom: 1rem;">// ESTE WORKSHOP</div>
-                        <h4 style="color: var(--g); font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem;">3 Horas · Hoy</h4>
+                        <div style="font-size: 0.6rem; letter-spacing: 0.18em; color: var(--g); margin-bottom: 1rem;">// OPCIÓN B — ESTE WORKSHOP</div>
+                        <h4 style="color: var(--g); font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem;">3 Horas con Metodología</h4>
                         <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
-                            <li style="font-size: 0.72rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
-                                <span style="color: var(--g); flex-shrink:0;">✓</span> Metodología Agentic Canvas lista para usar
+                            <li style="font-size: 0.78rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
+                                <span style="color: var(--g); flex-shrink:0;">✓</span> Lienzo Agéntico: tu proceso mapeado en 1 hora
                             </li>
-                            <li style="font-size: 0.72rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
-                                <span style="color: var(--g); flex-shrink:0;">✓</span> Prompts reales para tu caso de negocio
+                            <li style="font-size: 0.78rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
+                                <span style="color: var(--g); flex-shrink:0;">✓</span> Prompts reales para tu caso de negocio específico
                             </li>
-                            <li style="font-size: 0.72rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
-                                <span style="color: var(--g); flex-shrink:0;">✓</span> Plan de implementación personalizado
+                            <li style="font-size: 0.78rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
+                                <span style="color: var(--g); flex-shrink:0;">✓</span> Plan de implementación que te llevas ese día
                             </li>
-                            <li style="font-size: 0.72rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
-                                <span style="color: var(--g); flex-shrink:0;">✓</span> Certificación digital incluida
+                            <li style="font-size: 0.78rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
+                                <span style="color: var(--g); flex-shrink:0;">✓</span> Certificación digital para tu perfil profesional
                             </li>
                         </ul>
-                        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,255,110,0.2); font-size: 0.65rem; color: var(--g); letter-spacing: 0.08em;">$97 USD · PRECIO ESPECIAL →</div>
+                        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,255,110,0.2); font-size: 0.7rem; color: var(--g); letter-spacing: 0.08em; font-weight: 700;">$97 USD · GARANTÍA DE CRÉDITO →</div>
                     </div>
                     <!-- SINAPSIS_OS -->
                     <div style="background: var(--b800); padding: 2.5rem 2rem; border-top: 2px solid var(--c); position: relative;">
                         <div style="font-size: 0.6rem; letter-spacing: 0.18em; color: var(--c); margin-bottom: 1rem;">// SIGUIENTE NIVEL</div>
-                        <h4 style="color: var(--w); font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem;">SINAPSIS_OS</h4>
+                        <h4 style="color: var(--w); font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem;">SINAPSIS_OS Completo</h4>
                         <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
-                            <li style="font-size: 0.72rem; color: var(--w70); display: flex; gap: 0.5rem;">
+                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
                                 <span style="color: var(--c); flex-shrink:0;">→</span> Implementación experta llave en mano
                             </li>
-                            <li style="font-size: 0.72rem; color: var(--w70); display: flex; gap: 0.5rem;">
+                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
                                 <span style="color: var(--c); flex-shrink:0;">→</span> 12 agentes desplegados en 30 días
                             </li>
-                            <li style="font-size: 0.72rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: var(--c); flex-shrink:0;">→</span> Soporte y escalabilidad continua
+                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
+                                <span style="color: var(--c); flex-shrink:0;">→</span> Los $97 del taller se abonan al proyecto
                             </li>
-                            <li style="font-size: 0.72rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: var(--c); flex-shrink:0;">→</span> ROI promedio: +30% en 90 días
+                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
+                                <span style="color: var(--c); flex-shrink:0;">→</span> Retorno promedio documentado: +30% en 90 días
                             </li>
                         </ul>
-                        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,229,255,0.2); font-size: 0.65rem; color: var(--c); letter-spacing: 0.08em;">desde $500 USD →</div>
+                        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,229,255,0.2); font-size: 0.7rem; color: var(--c); letter-spacing: 0.08em;">desde $497 USD →</div>
                     </div>
                 </div>
             </div>
@@ -336,11 +373,13 @@
                     <p style="color:var(--w70); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
                         Estratega en Inteligencia Artificial & Fundador de <b>Sinapsis OS</b>. Especialista en arquitectura de agentes autónomos y rediseño operativo para PyMEs en LATAM.
                     </p>
-                    <ul style="list-style: none; padding: 0; color: var(--w50); font-size: 0.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-                        <li>▸ +50 procesos automatizados con éxito.</li>
-                        <li>▸ Experto en Ingeniería de Prompts (Claude).</li>
-                        <li>▸ Especialista en Low-Code (n8n, Make).</li>
+                    <ul style="list-style: none; padding: 0; color: var(--w70); font-size: 0.82rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                        <li>▸ +50 procesos de PyMEs automatizados en LATAM.</li>
+                        <li>▸ Especialista en arquitectura de Agentes con Claude.</li>
+                        <li>▸ Low-Code avanzado: n8n, Make, Zapier en producción.</li>
                         <li>▸ Creador del framework <i>Agentic Canvas</i>.</li>
+                        <li>▸ Fundador de Sinapsis OS — el primer OS agéntico para PyMEs.</li>
+                        <li>▸ Ha facilitado workshops en Perú, Colombia y México.</li>
                     </ul>
                 </div>
             </div>
@@ -354,22 +393,32 @@
                 <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g);">
                     <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 01</div>
                     <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Necesito saber programar?</h4>
-                    <p style="font-size: 0.75rem; color: var(--w70); line-height: 1.7;">Absolutamente NO. El taller está diseñado para dueños de negocio. Si sabes usar Excel y tienes sentido común, puedes diseñar un Agente.</p>
+                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">No. Para nada. Si puedes usar WhatsApp y escribir en Word, tienes todo lo que necesitas. El taller no tiene una sola línea de código — está hecho para dueños de negocio, no para técnicos.</p>
                 </div>
                 <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g);">
                     <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 02</div>
-                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Quedará grabado?</h4>
-                    <p style="font-size: 0.75rem; color: var(--w70); line-height: 1.7;">Sí, todos los inscritos recibirán la grabación por 7 días, pero la magia ocurre en vivo durante las dinámicas de grupo.</p>
+                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Quedará grabado si no puedo en vivo?</h4>
+                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Sí, todos los inscritos reciben la grabación por 7 días. Pero la parte más valiosa son las dinámicas en vivo: cuando ves a otro dueño mapear su proceso en tiempo real, todo hace clic.</p>
                 </div>
                 <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g); border-top: 1px solid var(--bline);">
                     <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 03</div>
-                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Qué herramientas usaremos?</h4>
-                    <p style="font-size: 0.75rem; color: var(--w70); line-height: 1.7;">Claude (Anthropic) y Telegram. Te daremos guías para configurar tus cuentas antes de empezar.</p>
+                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Qué herramientas necesito?</h4>
+                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Usaremos Claude de Anthropic (tiene versión gratuita) y Telegram. Te mandamos una guía de configuración paso a paso antes del taller para que llegues listo — no necesitas configurar nada ese día.</p>
                 </div>
                 <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g); border-top: 1px solid var(--bline);">
                     <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 04</div>
-                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Cómo se paga?</h4>
-                    <p style="font-size: 0.75rem; color: var(--w70); line-height: 1.7;">Al hacer clic en el botón, nuestro Agente de Triage en Telegram te guiará con los métodos de pago disponibles (Yape/Plin/Transferencia/Tarjeta).</p>
+                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Cómo reservo mi lugar?</h4>
+                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Haz clic en el botón y te llegará un mensaje de nuestro Agente en Telegram. Él te guía con los métodos de pago disponibles: Yape, Plin, transferencia bancaria o tarjeta. En menos de 5 minutos quedas inscrito.</p>
+                </div>
+                <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g); border-top: 1px solid var(--bline);">
+                    <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 05</div>
+                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Qué pasa si no me sirve?</h4>
+                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Los $97 se convierten en crédito para implementar tu primer agente real con nosotros. Si decides continuar a SINAPSIS_OS, no pagas el taller de nuevo — ya está abonado. Es inversión, no gasto.</p>
+                </div>
+                <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g); border-top: 1px solid var(--bline);">
+                    <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 06</div>
+                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Para qué tipo de negocio funciona?</h4>
+                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Para cualquier PyME con procesos repetitivos: agencias, comercios, servicios profesionales, distribuidoras, clínicas, estudios. Si tienes un proceso que se repite más de 10 veces por semana, tienes un candidato perfecto para tu primer agente.</p>
                 </div>
             </div>
         </section>
