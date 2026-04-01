@@ -142,7 +142,7 @@ nav {
 }
 .logo em { font-style: normal; color: var(--g); text-shadow: 0 0 12px var(--g-gl); }
 .logo .ver {
-    font-size: 0.65rem; color: var(--w50); border: 1px solid var(--bline);
+    font-size: 0.78rem; color: var(--w50); border: 1px solid var(--bline);
     padding: 0.1rem 0.45rem; border-radius: 2px;
 }
 .nav-links { display:flex; gap:0; align-items:center; flex:1; }
@@ -272,7 +272,7 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
 .ticker-inner {
     display: flex; gap: 3rem; white-space: nowrap;
     animation: ticker 25s linear infinite;
-    font-size: 0.65rem; color: var(--w30);
+    font-size: 0.78rem; color: var(--w30);
     letter-spacing: 0.08em;
 }
 .ticker-inner span { color: var(--g); }
@@ -333,11 +333,11 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
     margin-top: 1.25rem; position: relative; z-index: 1;
 }
 .a-tag {
-    font-size: 0.55rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--g); border: 1px solid rgba(0,255,110,0.2);
     background: var(--g-dk); padding: 0.2rem 0.55rem;
 }
-.a-hint { font-size: 0.58rem; color: var(--w30); transition: color 0.2s; }
+.a-hint { font-size: 0.73rem; color: var(--w30); transition: color 0.2s; }
 .agent-card:hover .a-hint { color: var(--c); }
 
 /* ===== MODAL ===== */
@@ -367,16 +367,16 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
 }
 .m-dot { width: 10px; height: 10px; border-radius: 50%; }
 .m-dot.r{background:#ff5f57;} .m-dot.a{background:#febc2e;} .m-dot.g{background:#28c840;}
-.m-title { flex: 1; text-align: center; font-size: 0.58rem; color: var(--w30); letter-spacing: 0.08em; }
+.m-title { flex: 1; text-align: center; font-size: 0.73rem; color: var(--w30); letter-spacing: 0.08em; }
 .m-close {
     background: none; border: 1px solid var(--bline); color: var(--w30);
-    font-family: var(--mono); font-size: 0.58rem; padding: 0.25rem 0.65rem;
+    font-family: var(--mono); font-size: 0.73rem; padding: 0.25rem 0.65rem;
     cursor: pointer; transition: all .15s;
 }
 .m-close:hover { border-color: var(--g); color: var(--g); }
 
 .m-body { padding: 2rem 2.5rem 2.5rem; }
-.m-tag { font-size: 0.58rem; color: var(--g); letter-spacing: 0.18em; margin-bottom: 0.5rem; }
+.m-tag { font-size: 0.73rem; color: var(--g); letter-spacing: 0.18em; margin-bottom: 0.5rem; }
 .m-tag::before { content: '// '; color: var(--w30); }
 .m-title-2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.75rem; line-height: 1.15; }
 .m-desc { font-size: 0.75rem; color: var(--w70); line-height: 1.8; margin-bottom: 1.5rem; }
@@ -403,7 +403,7 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
 }
 .m-io-col { background: var(--b900); padding: 1.25rem; }
 .m-io-hdr {
-    font-size: 0.58rem; letter-spacing: 0.18em; color: var(--g);
+    font-size: 0.73rem; letter-spacing: 0.18em; color: var(--g);
     margin-bottom: 0.85rem; padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--bline);
 }
@@ -418,7 +418,7 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
 
 /* Use cases */
 .m-uc { margin-bottom: 1.5rem; }
-.m-uc-hdr { font-size: 0.58rem; letter-spacing: 0.18em; color: var(--w30); margin-bottom: 0.75rem; }
+.m-uc-hdr { font-size: 0.73rem; letter-spacing: 0.18em; color: var(--w30); margin-bottom: 0.75rem; }
 .m-uc-hdr::before { content: '// '; }
 .uc-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
 .uc-list li {
@@ -434,15 +434,15 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
     padding: 1rem 1.25rem; margin-bottom: 1.5rem;
     border-left: 3px solid var(--y);
 }
-.m-roi-hdr { font-size: 0.58rem; color: var(--y); letter-spacing: 0.12em; margin-bottom: 0.5rem; }
+.m-roi-hdr { font-size: 0.73rem; color: var(--y); letter-spacing: 0.12em; margin-bottom: 0.5rem; }
 .m-roi p { font-size: 0.72rem; color: var(--w70); }
 
 /* Integrations */
-.m-int-hdr { font-size: 0.58rem; letter-spacing: 0.18em; color: var(--w30); margin-bottom: 0.65rem; }
+.m-int-hdr { font-size: 0.73rem; letter-spacing: 0.18em; color: var(--w30); margin-bottom: 0.65rem; }
 .m-int-hdr::before { content: '// '; }
 .int-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
 .int-tag {
-    font-size: 0.58rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    font-size: 0.73rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--c); border: 1px solid rgba(0,229,255,0.2);
     background: var(--c-gl); padding: 0.25rem 0.6rem;
 }
@@ -456,10 +456,10 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
     border: 1px solid var(--bline);
 }
 .m-step { padding: 1.75rem; }
-.m-week { font-size: 0.58rem; letter-spacing: 0.18em; color: var(--g); margin-bottom: 0.6rem; }
+.m-week { font-size: 0.73rem; letter-spacing: 0.18em; color: var(--g); margin-bottom: 0.6rem; }
 .m-week::before { content: '// '; }
 .m-step h4 { font-size: 0.82rem; font-weight: 700; margin-bottom: 0.5rem; }
-.m-step p { font-size: 0.68rem; color: var(--w50); }
+.m-step p { font-size: 0.80rem; color: var(--w50); }
 
 /* ===== PRICING ===== */
 .pkg-grid {
@@ -471,16 +471,16 @@ hr.div { border: none; border-top: 1px solid var(--bline); position: relative; z
 .pkg-badge {
     position: absolute; top: 0; right: 1.5rem;
     background: var(--g); color: var(--black);
-    font-size: 0.52rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: 0.70rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
     padding: 0.22rem 0.65rem;
 }
-.pkg-tier { font-size: 0.55rem; color: var(--w30); letter-spacing: 0.18em; margin-bottom: 0.35rem; }
+.pkg-tier { font-size: 0.72rem; color: var(--w30); letter-spacing: 0.18em; margin-bottom: 0.35rem; }
 .pkg-tier::before { content: '// '; }
 .pkg-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.35rem; }
-.pkg-who { font-size: 0.68rem; color: var(--w50); margin-bottom: 1.25rem; line-height: 1.5; }
+.pkg-who { font-size: 0.80rem; color: var(--w50); margin-bottom: 1.25rem; line-height: 1.5; }
 .pkg-price { font-size: 2.25rem; font-weight: 800; line-height: 1; }
 .pkg-price sub { font-size: 0.7rem; color: var(--w30); font-weight: 400; }
-.pkg-ret { font-size: 0.62rem; color: var(--g); margin-top: 0.2rem; margin-bottom: 1.25rem; }
+.pkg-ret { font-size: 0.75rem; color: var(--g); margin-top: 0.2rem; margin-bottom: 1.25rem; }
 hr.pd { border: none; border-top: 1px solid var(--bline); margin: 1.25rem 0; }
 .pkg-feat { list-style: none; flex-grow: 1; margin-bottom: 2rem; }
 .pkg-feat li {
@@ -500,7 +500,7 @@ hr.pd { border: none; border-top: 1px solid var(--bline); margin: 1.25rem 0; }
 }
 .td { width: 10px; height: 10px; border-radius: 50%; }
 .td.r{background:#ff5f57;} .td.a{background:#febc2e;} .td.g{background:#28c840;}
-.t-ttl { flex: 1; text-align: center; font-size: 0.58rem; color: var(--w30); letter-spacing: 0.06em; }
+.t-ttl { flex: 1; text-align: center; font-size: 0.73rem; color: var(--w30); letter-spacing: 0.06em; }
 .t-body { padding: 1.25rem; }
 .t-ln { display: block; font-size: 0.7rem; color: var(--w50); padding: 0.15rem 0; }
 .tp { color: var(--g); } .tc { color: var(--w30); font-style: italic; }
@@ -521,7 +521,7 @@ hr.pd { border: none; border-top: 1px solid var(--bline); margin: 1.25rem 0; }
     border-top: 2px solid var(--g); padding: 2rem;
 }
 .f-row { margin-bottom: 1rem; }
-.f-row label { display: block; font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--w30); margin-bottom: 0.35rem; }
+.f-row label { display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--w30); margin-bottom: 0.35rem; }
 .f-row input, .f-row select {
     width: 100%; background: var(--b900); border: 1px solid var(--bline);
     color: var(--w); font-family: var(--mono); font-size: 0.75rem;
@@ -536,7 +536,7 @@ footer {
     position: relative; z-index: 1;
 }
 .f-in { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
-footer a, footer p { font-size: 0.65rem; color: var(--w30); text-decoration: none; }
+footer a, footer p { font-size: 0.78rem; color: var(--w30); text-decoration: none; }
 footer a:hover { color: var(--g); }
 
 /* ===== ANIMATED COUNTER ATTRIBUTE ===== */

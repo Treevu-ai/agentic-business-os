@@ -75,6 +75,57 @@
             color: var(--g);
         }
 
+        /* COUNTDOWN */
+        .countdown-bar {
+            display: flex; gap: 1px; background: var(--bline);
+            border: 1px solid var(--bline); border-left: 3px solid var(--y);
+            margin: 1.5rem auto 0; max-width: 520px;
+        }
+        .cd-unit {
+            flex: 1; background: var(--b800); padding: 1rem 0.5rem;
+            text-align: center;
+        }
+        .cd-num {
+            font-size: 2rem; font-weight: 800; color: var(--y);
+            line-height: 1; display: block;
+            text-shadow: 0 0 20px rgba(255,232,77,0.4);
+        }
+        .cd-lbl {
+            font-size: 0.55rem; letter-spacing: 0.12em;
+            color: var(--w30); margin-top: 0.3rem; display: block;
+        }
+
+        /* DRILL DOWN PASOS */
+        .step-item {
+            background: var(--b800); border: 1px solid var(--bline);
+            border-top: 2px solid var(--g); margin-bottom: 1px;
+            cursor: pointer; transition: background 0.2s;
+        }
+        .step-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 2rem;
+        }
+        .step-header h3 { color: var(--g); font-size: 1.05rem; margin: 0; }
+        .step-toggle {
+            font-size: 0.7rem; color: var(--g); letter-spacing: 0.1em;
+            transition: transform 0.3s; display: inline-block;
+        }
+        .step-item.open .step-toggle { transform: rotate(45deg); }
+        .step-body {
+            display: none; padding: 0 2rem 1.75rem;
+            border-top: 1px solid var(--bline);
+        }
+        .step-item.open .step-body { display: block; }
+        .step-body p { color: var(--w70); font-size: 0.82rem; line-height: 1.75; margin-bottom: 1rem; }
+        .step-detail {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+            background: var(--bline); border: 1px solid var(--bline); margin-top: 1rem;
+        }
+        .sd-item { background: var(--b700); padding: 1rem 1.25rem; }
+        .sd-label { font-size: 0.55rem; color: var(--g); letter-spacing: 0.12em; margin-bottom: 0.4rem; }
+        .sd-label::before { content: '// '; color: var(--w30); }
+        .sd-val { font-size: 0.75rem; color: var(--w70); line-height: 1.6; }
+
         @media(max-width: 900px) {
             .workshop-grid {
                 grid-template-columns: 1fr;
@@ -118,16 +169,29 @@
         <section class="workshop-hero">
             <div class="hero-badge">
                 <span class="ping"></span>
-                ONLINE · 3 HORAS · <span id="slots-left" style="color:var(--y);font-weight:800;">SOLO 6</span>/20 CUPOS EARLY BIRD
+                EN LÍNEA · 3 HORAS · <span id="slots-left" style="color:var(--y);font-weight:800;">SOLO 6</span>/20 CUPOS PRECIO ESPECIAL
             </div>
             <h1>
                 <span class="glitch-text" data-text="Diseña tu primer">Diseña tu primer</span><br>
                 <em id="tw-niche" class="typing-line">Empleado Digital</em>.
             </h1>
-            <p class="hero-sub" style="margin: 0 auto 2rem;">
+            <p class="hero-sub" style="margin: 0 auto 1rem;">
                 Workshop intensivo para dueños de PyMEs que quieren dejar de ser el cuello de botella. Aprende la lógica
                 de los Agentes de IA y mira cómo trabajan por ti — sin tocar una sola línea de código.
             </p>
+
+            <!-- FECHA + COUNTDOWN -->
+            <div style="margin: 0.5rem auto 2rem; text-align: center;">
+                <div style="font-size: 0.7rem; color: var(--w50); letter-spacing: 0.12em; margin-bottom: 0.5rem;">
+                    <span style="color: var(--y);">📅</span> LUNES 14 DE ABRIL · 08:00 HRS (HORA PERÚ)
+                </div>
+                <div class="countdown-bar rv" id="countdown-bar">
+                    <div class="cd-unit"><span class="cd-num" id="cd-dias">--</span><span class="cd-lbl">DÍAS</span></div>
+                    <div class="cd-unit"><span class="cd-num" id="cd-horas">--</span><span class="cd-lbl">HORAS</span></div>
+                    <div class="cd-unit"><span class="cd-num" id="cd-min">--</span><span class="cd-lbl">MINUTOS</span></div>
+                    <div class="cd-unit"><span class="cd-num" id="cd-seg">--</span><span class="cd-lbl">SEGUNDOS</span></div>
+                </div>
+            </div>
 
             <div class="workshop-grid">
                 <div class="workshop-item glass-card scan-line-card rv">
@@ -152,7 +216,7 @@
             </div>
 
             <div class="price-box glass-card rv">
-                <div class="s-num" style="color:var(--g);">[ PRECIO EARLY BIRD ]</div>
+                <div class="s-num" style="color:var(--g);">[ PRECIO ESPECIAL DE LANZAMIENTO ]</div>
                 <div style="font-size: 1.1rem; text-decoration: line-through; margin-bottom: -0.5rem; color: var(--w30);">$157 USD / S/ 597.00</div>
                 <div class="price-tag" style="display: flex; flex-direction: column; align-items: center; gap: 0.2rem; margin: 1.5rem 0;">
                     <span style="font-size: 3.5rem; line-height: 1; color: var(--w); font-weight: 800; text-shadow: 0 0 30px var(--g-gl);">$97 USD</span>
@@ -213,7 +277,7 @@
                                 <span style="color: var(--g); flex-shrink:0;">✓</span> Certificación digital incluida
                             </li>
                         </ul>
-                        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,255,110,0.2); font-size: 0.65rem; color: var(--g); letter-spacing: 0.08em;">$97 USD · EARLY BIRD →</div>
+                        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,255,110,0.2); font-size: 0.65rem; color: var(--g); letter-spacing: 0.08em;">$97 USD · PRECIO ESPECIAL →</div>
                     </div>
                     <!-- SINAPSIS_OS -->
                     <div style="background: var(--b800); padding: 2.5rem 2rem; border-top: 2px solid var(--c); position: relative;">
@@ -269,7 +333,7 @@
                     <div class="s-num" style="color:var(--g); margin-bottom: 0.5rem;">[ EL FACILITADOR ]</div>
                     <h2 class="s-title" style="font-size:1.8rem; margin-bottom: 1rem;">Ricardo <em>Cuba</em></h2>
                     <p style="color:var(--w70); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
-                        AI Strategist & Fundador de <b>Sinapsis OS</b>. Especialista en arquitectura de agentes autónomos y rediseño operativo para PyMEs en LATAM.
+                        Estratega en Inteligencia Artificial & Fundador de <b>Sinapsis OS</b>. Especialista en arquitectura de agentes autónomos y rediseño operativo para PyMEs en LATAM.
                     </p>
                     <ul style="list-style: none; padding: 0; color: var(--w50); font-size: 0.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
                         <li>▸ +50 procesos automatizados con éxito.</li>
@@ -282,7 +346,7 @@
 
             <section id="faq" class="rv" style="padding-bottom: 8rem;">
             <div class="s-hdr">
-                <span class="s-num">FAQ //</span>
+                <span class="s-num">PREGUNTAS FRECUENTES //</span>
                 <h2 class="s-title">¿Es para mí?</h2>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--bline); border: 1px solid var(--bline);">
@@ -319,17 +383,17 @@
     </footer>
 
     <div class="statusbar">
-        <span class="s-live">WORKSHOP MODE: ACTIVE</span>
-        <span>REGISTRATIONS OPEN</span>
-        <span id="sb-time">SYS_TIME: --:--:--</span>
-        <span class="ml">SINAPSIS_OS Workshop Portal</span>
+        <span class="s-live">MODO TALLER: ACTIVO</span>
+        <span>INSCRIPCIONES ABIERTAS</span>
+        <span id="sb-time">HORA: --:--:--</span>
+        <span class="ml">SINAPSIS_OS Portal del Taller</span>
     </div>
 
     <script>
         // Status bar clock
         setInterval(() => {
             const n = new Date();
-            document.getElementById('sb-time').textContent = `SYS_TIME: ${n.toLocaleTimeString('es-PE', { hour12: false })}`;
+            document.getElementById('sb-time').textContent = `HORA: ${n.toLocaleTimeString('es-PE', { hour12: false })}`;
         }, 1000);
 
         // Scarcity Counter
