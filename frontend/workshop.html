@@ -4,146 +4,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORKSHOP: Tu Primer Agente de IA — SINAPSIS_OS</title>
+    <title>Tu Primer Empleado Digital™ — SINAPSIS_OS</title>
     <meta name="description"
-        content="Taller intensivo de 3 horas para dueños de PyMEs. Diseña tu primer empleado digital sin programar. Cupos limitados.">
+        content="Un agente IA que trabaja por ti 24/7 — vendiendo, respondiendo clientes o automatizando tareas. Sin código. Sin contratar equipo. Resultados en 30 días.">
     <link rel="stylesheet" href="commercial.css">
     <link rel="stylesheet" href="sinapsis_ux.css">
     <style>
-        .workshop-hero {
-            padding: 8rem 0 4rem;
-            text-align: center;
+        /* ── HERO ── */
+        .ws-hero { padding: 8rem 0 5rem; text-align: center; }
+
+        /* ── SECCIONES ── */
+        .ws-section { margin: 6rem 0; }
+
+        /* ── PROBLEMA ── */
+        .prob-block {
+            background: var(--b800); border: 1px solid var(--bline);
+            border-left: 4px solid #ff5f57;
+            padding: 3rem 3.5rem; margin-top: 2rem;
+        }
+        .prob-block p { color: var(--w70); font-size: 1rem; line-height: 2; margin: 0; }
+        .prob-block strong { color: var(--w); }
+        .prob-block .prob-punch {
+            margin-top: 2rem; padding-top: 2rem;
+            border-top: 1px solid rgba(255,95,87,0.2);
+            font-size: 1.15rem; font-weight: 800;
+            color: #ff5f57; line-height: 1.5;
         }
 
-        .workshop-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 4rem;
+        /* ── OPORTUNIDAD ── */
+        .opp-grid {
+            display: grid; grid-template-columns: repeat(3,1fr);
+            gap: 1px; background: var(--bline);
+            border: 1px solid var(--bline); margin-top: 2rem;
+        }
+        .opp-item {
+            background: var(--b700); padding: 2.5rem 2rem;
+            border-top: 2px solid var(--g);
+        }
+        .opp-item .opp-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+        .opp-item h4 { color: var(--g); font-size: 1rem; margin-bottom: 0.75rem; }
+        .opp-item p { color: var(--w70); font-size: 0.82rem; line-height: 1.65; }
+
+        /* ── FLUJO VISUAL ── */
+        .flow-diagram {
+            display: flex; align-items: center; justify-content: center;
+            gap: 0; margin-top: 2rem; flex-wrap: wrap;
+        }
+        .flow-node {
+            background: var(--b700); border: 1px solid var(--g);
+            padding: 1.5rem 2rem; text-align: center; min-width: 160px;
+        }
+        .flow-node .fn-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .flow-node .fn-lbl { font-size: 0.65rem; color: var(--w50); letter-spacing: 0.12em; margin-bottom: 0.3rem; }
+        .flow-node .fn-val { font-size: 0.85rem; color: var(--w); font-weight: 700; }
+        .flow-arrow {
+            color: var(--g); font-size: 1.5rem; padding: 0 0.5rem;
+            font-weight: 800;
         }
 
-        .workshop-item { background: var(--b800); border: 1px solid var(--bline); padding: 2.5rem; border-top: 2px solid var(--g); }
-        .workshop-item h3 { color: var(--g); margin-bottom: 1.25rem; font-size: 1.25rem; }
-        .workshop-item p { color: var(--w70); font-size: 0.95rem; line-height: 1.65; }
+        /* ── FASES ── */
+        .fases-grid {
+            display: grid; grid-template-columns: repeat(4,1fr);
+            gap: 1px; background: var(--bline);
+            border: 1px solid var(--bline); margin-top: 2rem;
+        }
+        .fase-item { background: var(--b800); padding: 2.5rem 1.75rem; }
+        .fase-num {
+            font-size: 0.6rem; letter-spacing: 0.18em;
+            color: var(--g); margin-bottom: 1rem;
+        }
+        .fase-item h4 { color: var(--w); font-size: 0.95rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .fase-item p { color: var(--w70); font-size: 0.78rem; line-height: 1.65; }
 
+        /* ── QUÉ INCLUYE ── */
+        .include-list {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1px; background: var(--bline);
+            border: 1px solid var(--bline); margin-top: 2rem;
+        }
+        .include-item {
+            background: var(--b700); padding: 1.75rem 2rem;
+            display: flex; gap: 1rem; align-items: flex-start;
+        }
+        .include-check { color: var(--g); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .include-item h5 { color: var(--w); font-size: 0.9rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .include-item p { color: var(--w70); font-size: 0.78rem; line-height: 1.6; margin: 0; }
+
+        /* ── CASOS DE USO ── */
+        .casos-grid {
+            display: grid; grid-template-columns: repeat(3,1fr);
+            gap: 1px; background: var(--bline);
+            border: 1px solid var(--bline); margin-top: 2rem;
+        }
+        .caso-item {
+            background: var(--b800); padding: 2.5rem 2rem;
+            border-top: 2px solid var(--c);
+        }
+        .caso-item .caso-type {
+            font-size: 0.55rem; letter-spacing: 0.15em;
+            color: var(--c); margin-bottom: 1rem;
+        }
+        .caso-item h4 { color: var(--w); font-size: 0.95rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .caso-item p { color: var(--w70); font-size: 0.78rem; line-height: 1.65; }
+        .caso-result {
+            margin-top: 1.25rem; padding: 0.75rem 1rem;
+            background: var(--b700); border-left: 3px solid var(--c);
+            font-size: 0.75rem; color: var(--c); font-weight: 700;
+        }
+
+        /* ── TESTIMONIOS ── */
+        .testi-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1rem; margin-top: 2rem;
+        }
+        .testi-item {
+            background: var(--b700); border: 1px solid var(--bline);
+            border-left: 3px solid var(--g); padding: 2rem;
+        }
+        .testi-quote { color: var(--w); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; font-style: italic; }
+        .testi-quote::before { content: '"'; color: var(--g); font-size: 1.5rem; font-style: normal; }
+        .testi-quote::after { content: '"'; color: var(--g); font-size: 1.5rem; font-style: normal; }
+        .testi-author { font-size: 0.7rem; color: var(--w50); letter-spacing: 0.1em; }
+        .testi-author strong { color: var(--g); }
+
+        /* ── PRECIO ── */
         .price-box {
-            background: var(--b700);
-            border: 1px solid var(--g);
-            padding: 2.5rem;
-            text-align: center;
-            margin-top: 3rem;
-            position: relative;
-            overflow: hidden;
+            background: var(--b700); border: 1px solid var(--g);
+            padding: 3rem; text-align: center;
+            position: relative; overflow: hidden; margin-top: 2rem;
         }
-
         .price-box::before {
-            content: 'OFERTA LIMITADA';
-            position: absolute;
-            top: 1rem;
-            right: -2rem;
-            background: var(--g);
-            color: var(--black);
-            font-size: 0.8rem;
-            font-weight: 800;
-            padding: 0.35rem 3rem;
-            transform: rotate(45deg);
+            content: 'CUPOS LIMITADOS';
+            position: absolute; top: 1rem; right: -2rem;
+            background: var(--g); color: var(--black);
+            font-size: 0.8rem; font-weight: 800;
+            padding: 0.35rem 3rem; transform: rotate(45deg);
         }
 
-        .price-tag {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--w);
-            margin: 1rem 0;
-        }
-
-        .price-sub {
-            font-size: 0.85rem;
-            color: var(--g);
-            letter-spacing: 0.08em;
-            margin-bottom: 2rem;
-        }
-
-        .bonus-alert {
-            background: var(--g-dk);
-            border-left: 3px solid var(--g);
-            padding: 1rem;
-            margin-top: 2rem;
-            text-align: left;
-        }
-
-        .bonus-alert strong {
-            color: var(--g);
-        }
-
-        /* COUNTDOWN */
+        /* ── COUNTDOWN ── */
         .countdown-bar {
             display: flex; gap: 1px; background: var(--bline);
             border: 1px solid var(--bline); border-left: 3px solid var(--y);
-            margin: 1.5rem auto 0; max-width: 520px;
+            margin: 1.5rem auto 0; max-width: 480px;
         }
-        .cd-unit {
-            flex: 1; background: var(--b800); padding: 1rem 0.5rem;
-            text-align: center;
-        }
+        .cd-unit { flex: 1; background: var(--b800); padding: 1rem 0.5rem; text-align: center; }
         .cd-num {
             font-size: 2rem; font-weight: 800; color: var(--y);
             line-height: 1; display: block;
             text-shadow: 0 0 20px rgba(255,232,77,0.4);
         }
-        .cd-lbl {
-            font-size: 0.55rem; letter-spacing: 0.12em;
-            color: var(--w30); margin-top: 0.3rem; display: block;
-        }
+        .cd-lbl { font-size: 0.55rem; letter-spacing: 0.12em; color: var(--w30); margin-top: 0.3rem; display: block; }
 
-        /* DRILL DOWN PASOS */
-        .step-item {
-            background: var(--b800); border: 1px solid var(--bline);
-            border-top: 2px solid var(--g); margin-bottom: 1px;
-            cursor: pointer; transition: background 0.2s;
+        /* ── URGENCIA ── */
+        .urgencia-bar {
+            background: var(--b800); border: 1px solid rgba(255,232,77,0.3);
+            border-left: 4px solid var(--y); padding: 1.5rem 2rem;
+            display: flex; align-items: center; gap: 1.5rem; margin-top: 2rem;
+            flex-wrap: wrap;
         }
-        .step-header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5rem 2rem;
-        }
-        .step-header h3 { color: var(--g); font-size: 1.05rem; margin: 0; }
-        .step-toggle {
-            font-size: 0.7rem; color: var(--g); letter-spacing: 0.1em;
-            transition: transform 0.3s; display: inline-block;
-        }
-        .step-item.open .step-toggle { transform: rotate(45deg); }
-        .step-body {
-            display: none; padding: 0 2rem 1.75rem;
-            border-top: 1px solid var(--bline);
-        }
-        .step-item.open .step-body { display: block; }
-        .step-body p { color: var(--w70); font-size: 0.82rem; line-height: 1.75; margin-bottom: 1rem; }
-        .step-detail {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-            background: var(--bline); border: 1px solid var(--bline); margin-top: 1rem;
-        }
-        .sd-item { background: var(--b700); padding: 1rem 1.25rem; }
-        .sd-label { font-size: 0.55rem; color: var(--g); letter-spacing: 0.12em; margin-bottom: 0.4rem; }
-        .sd-label::before { content: '// '; color: var(--w30); }
-        .sd-val { font-size: 0.75rem; color: var(--w70); line-height: 1.6; }
+        .urgencia-bar .u-num { font-size: 2.5rem; font-weight: 800; color: var(--y); line-height: 1; }
+        .urgencia-bar .u-text { font-size: 0.85rem; color: var(--w70); line-height: 1.5; }
+        .urgencia-bar .u-text strong { color: var(--w); }
 
-        @media(max-width: 900px) {
-            .workshop-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-stats {
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-            }
-            .prob-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .facilitador-box {
-                grid-template-columns: 1fr !important;
-                text-align: center !important;
-            }
-            .facilitador-img {
-                margin: 0 auto;
-            }
+        /* ── CTA FINAL ── */
+        .cta-final {
+            text-align: center; padding: 6rem 0 8rem;
+        }
+        .cta-final h2 {
+            font-size: 2.5rem; font-weight: 800; color: var(--w);
+            margin-bottom: 1rem; line-height: 1.2;
+        }
+        .cta-final h2 em { color: var(--g); font-style: normal; }
+
+        /* ── GARANTÍA ── */
+        .garantia {
+            background: var(--g-dk); border: 1px solid rgba(0,255,110,0.2);
+            border-left: 4px solid var(--g); padding: 1.5rem 2rem;
+            margin-top: 2rem; display: flex; gap: 1rem; align-items: flex-start;
+        }
+        .garantia .g-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .garantia p { color: var(--w70); font-size: 0.85rem; line-height: 1.65; margin: 0; }
+        .garantia strong { color: var(--g); }
+
+        @media(max-width:900px) {
+            .opp-grid, .fases-grid, .casos-grid { grid-template-columns: 1fr; }
+            .include-list, .testi-grid { grid-template-columns: 1fr; }
+            .flow-diagram { flex-direction: column; }
             h1 { font-size: 2.2rem; }
         }
     </style>
@@ -161,39 +207,53 @@
             <div class="nav-links">
                 <a href="index.html" class="nav-link">// volver a inicio</a>
             </div>
-            <a href="https://t.me/SinapsisAgente_bot" class="nav-cta">Asegurar Cupo via Telegram →</a>
+            <a href="https://t.me/SinapsisAgente_bot?start=empleado" class="nav-cta">Quiero mi Empleado Digital →</a>
         </div>
     </nav>
 
     <main class="container">
-        <section class="workshop-hero">
+
+        <!-- ══════════════════════════════════════
+             HERO
+        ══════════════════════════════════════ -->
+        <section class="ws-hero">
             <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 1.5rem;">
                 <div class="hero-badge" style="display:inline-flex;">
                     <span class="ping"></span>
-                    EN LÍNEA · 3 HORAS EN VIVO
+                    IMPLEMENTACIÓN EN VIVO · 30 DÍAS
                 </div>
                 <div class="hero-badge" style="display:inline-flex; border-color:rgba(255,232,77,0.3); color:var(--y);">
-                    SOLO <span id="slots-left" style="font-weight:800; margin: 0 0.3em;">6</span>/20 CUPOS · PRECIO ESPECIAL HASTA EL 10 DE ABRIL
+                    SOLO <span id="slots-left" style="font-weight:800; margin: 0 0.3em;">8</span>/25 CUPOS DISPONIBLES
                 </div>
                 <div class="hero-badge" style="display:inline-flex; border-color:rgba(0,229,255,0.3); color:var(--c);">
-                    DISEÑADO PARA DUEÑOS DE PYMES EN LATAM
+                    SIN CÓDIGO · SIN CONTRATAR EQUIPO
                 </div>
             </div>
+
             <h1>
-                <span class="glitch-text" data-text="Workshop Online:">Workshop Online:</span><br>
-                Diseña tu Primer<br>
-                <em id="tw-niche">Empleado Digital</em><br>
-                en 3 Horas.
+                Construye tu Primer<br>
+                <em>Empleado Digital™</em><br>
+                en 30 días.
             </h1>
-            <p class="hero-sub" style="margin: 0 auto 1rem;">
-                Pasa de ser el cuello de botella a tener un Agente de IA trabajando por ti todos los días —
-                sin escribir una sola línea de código.
+            <p class="hero-sub" style="margin: 0 auto 2rem;">
+                Un agente IA que trabaja por ti 24/7 — vendiendo, respondiendo clientes<br>
+                o automatizando tareas. Sin código. Sin contratar equipo.
             </p>
 
-            <!-- FECHA + COUNTDOWN -->
-            <div style="margin: 0.5rem auto 2rem; text-align: center;">
+            <a href="https://t.me/SinapsisAgente_bot?start=empleado" class="btn btn-premium"
+                style="font-size: 1.15rem; padding: 1.4rem 3rem; display: inline-flex; gap: 0.5rem;">
+                👉 Quiero mi Empleado Digital
+            </a>
+            <div style="margin-top: 1rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <span style="font-size: 0.78rem; color: var(--w50);">✔ Sin experiencia técnica</span>
+                <span style="font-size: 0.78rem; color: var(--w50);">✔ Aplicado a tu negocio real</span>
+                <span style="font-size: 0.78rem; color: var(--w50);">✔ Resultados en 30 días</span>
+            </div>
+
+            <!-- COUNTDOWN -->
+            <div style="margin: 3rem auto 0; text-align: center;">
                 <div style="font-size: 0.7rem; color: var(--w50); letter-spacing: 0.12em; margin-bottom: 0.5rem;">
-                    <span style="color: var(--y);">📅</span> LUNES 14 DE ABRIL · 08:00 HRS (HORA PERÚ)
+                    <span style="color: var(--y);">📅</span> PRÓXIMO INICIO: LUNES 14 DE ABRIL · 08:00 HRS (PERÚ)
                 </div>
                 <div class="countdown-bar rv" id="countdown-bar">
                     <div class="cd-unit"><span class="cd-num" id="cd-dias">--</span><span class="cd-lbl">DÍAS</span></div>
@@ -202,226 +262,351 @@
                     <div class="cd-unit"><span class="cd-num" id="cd-seg">--</span><span class="cd-lbl">SEGUNDOS</span></div>
                 </div>
             </div>
+        </section>
 
-            <div class="method-grid" style="margin-top: 3rem;">
-                <div class="m-step glass-card scan-line-card rv">
-                    <div class="m-week">PASO 01 //</div>
-                    <h4>Auditoría Lógica</h4>
-                    <p>Usa el Lienzo Agéntico para mapear tu proceso más doloroso y convertirlo en pasos que una IA pueda ejecutar con precisión.</p>
-                </div>
-                <div class="m-step glass-card scan-line-card rv d1">
-                    <div class="m-week">PASO 02 //</div>
-                    <h4>Laboratorio de IA</h4>
-                    <p>Importa una arquitectura de instrucciones real. Ejecuta y mira cómo la IA razona y entrega resultados bajo tus propias reglas de negocio.</p>
-                </div>
-                <div class="m-step glass-card scan-line-card rv d2">
-                    <div class="m-week">PASO 03 //</div>
-                    <h4>El Efecto Retorno</h4>
-                    <p>Calcularemos cuántas horas y dinero recuperas al mes. Saldrás con un plan de implementación listo para tu empresa.</p>
-                </div>
-                <div class="m-step glass-card scan-line-card rv d3">
-                    <div class="m-week">PASO 04 //</div>
-                    <h4>Certificación</h4>
-                    <p>Obtén tu certificación digital de "Rediseño de Procesos con IA" avalada por Sinapsis OS para tu perfil profesional.</p>
+        <!-- ══════════════════════════════════════
+             PROBLEMA
+        ══════════════════════════════════════ -->
+        <section class="ws-section rv">
+            <div class="s-hdr" style="justify-content:center;">
+                <h2 class="s-title">Tu negocio<br><em>depende de ti.</em></h2>
+            </div>
+            <div class="prob-block">
+                <p>
+                    Si no respondes → <strong>pierdes ventas.</strong><br>
+                    Si no operas → <strong>se detiene todo.</strong><br>
+                    Si creces → <strong>te saturas.</strong>
+                </p>
+                <div class="prob-punch">
+                    No tienes un negocio.<br>
+                    Tienes un autoempleo.
                 </div>
             </div>
+        </section>
 
-            <div class="price-box glass-card rv">
-                <div class="s-num" style="color:var(--g);">[ PRECIO ESPECIAL DE LANZAMIENTO ]</div>
-                <div style="font-size: 1.1rem; text-decoration: line-through; margin-bottom: -0.5rem; color: var(--w30);">$157 USD / S/ 597.00</div>
-                <div class="price-tag" style="display: flex; flex-direction: column; align-items: center; gap: 0.2rem; margin: 1.5rem 0;">
-                    <span style="font-size: 3.5rem; line-height: 1; color: var(--w); font-weight: 800; text-shadow: 0 0 30px var(--g-gl);">$97 USD</span>
-                    <span style="font-size: 1.25rem; font-weight: 400; color: var(--w50);">≈ S/ 387.00</span>
+        <!-- ══════════════════════════════════════
+             OPORTUNIDAD
+        ══════════════════════════════════════ -->
+        <section class="ws-section rv">
+            <div class="s-hdr" style="justify-content:center;">
+                <h2 class="s-title">Hoy puedes tener un equipo<br><em>sin contratar personas.</em></h2>
+            </div>
+            <div class="opp-grid">
+                <div class="opp-item">
+                    <div class="opp-icon">💬</div>
+                    <h4>Responde clientes</h4>
+                    <p>Tu agente atiende preguntas, resuelve dudas y cierra ventas en WhatsApp, web o email — mientras tú duermes.</p>
                 </div>
-                <p class="price-sub" style="color: var(--g); opacity: 0.8;">// SOLO 20 CUPOS (HASTA EL 10 DE ABRIL)</p>
-                
-                <a href="https://t.me/SinapsisAgente_bot?start=workshop" class="btn btn-premium btn-full"
-                    style="font-size: 1.1rem; padding: 1.4rem;">
-                    QUIERO DISEÑAR MI EMPLEADO DIGITAL →
+                <div class="opp-item">
+                    <div class="opp-icon">🔄</div>
+                    <h4>Hace seguimiento</h4>
+                    <p>Contacta prospectos, envía recordatorios y mantiene el pipeline activo sin que tengas que acordarte de nada.</p>
+                </div>
+                <div class="opp-item">
+                    <div class="opp-icon">⚙️</div>
+                    <h4>Ejecuta tareas repetitivas</h4>
+                    <p>Genera reportes, procesa pedidos, filtra correos, actualiza registros. Todo lo que te roba tiempo hoy.</p>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top: 2rem; font-size: 1rem; color: var(--g); font-weight: 700;">
+                24/7. Sin descanso. Sin errores humanos.
+            </p>
+
+            <!-- FLUJO VISUAL -->
+            <div class="flow-diagram rv" style="margin-top: 3rem;">
+                <div class="flow-node">
+                    <div class="fn-icon">👤</div>
+                    <div class="fn-lbl">ENTRADA</div>
+                    <div class="fn-val">Cliente escribe</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node" style="border-color: var(--g); box-shadow: 0 0 20px rgba(0,255,110,0.12);">
+                    <div class="fn-icon">🤖</div>
+                    <div class="fn-lbl">TU AGENTE</div>
+                    <div class="fn-val">Procesa y decide</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node">
+                    <div class="fn-icon">✅</div>
+                    <div class="fn-lbl">RESULTADO</div>
+                    <div class="fn-val">Respuesta automática</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             SOLUCIÓN
+        ══════════════════════════════════════ -->
+        <section class="ws-section rv">
+            <div class="s-hdr" style="justify-content:center;">
+                <h2 class="s-title">Tu Primer<br><em>Empleado Digital™</em></h2>
+            </div>
+            <div style="background: var(--b700); border: 1px solid var(--g); border-left: 4px solid var(--g); padding: 3rem 3.5rem; margin-top: 2rem; text-align: center;">
+                <p style="font-size: 1.05rem; color: var(--w70); line-height: 1.9; max-width: 620px; margin: 0 auto;">
+                    No es teoría.<br>
+                    No es un curso más.<br><br>
+                    <strong style="color: var(--w); font-size: 1.15rem;">Es un sistema guiado para construir un agente<br>que funcione en tu negocio — en 30 días.</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             RESULTADOS
+        ══════════════════════════════════════ -->
+        <section class="ws-section rv">
+            <div class="s-hdr" style="justify-content:center;">
+                <h2 class="s-title">En 4 semanas<br><em>tendrás:</em></h2>
+            </div>
+            <div class="hero-stats" style="margin-top: 2rem; border-color: var(--bline-h);">
+                <div class="h-stat">
+                    <div class="h-stat-num">✔</div>
+                    <div class="h-stat-lbl">UN AGENTE IA FUNCIONANDO EN TU NEGOCIO</div>
+                </div>
+                <div class="h-stat">
+                    <div class="h-stat-num">✔</div>
+                    <div class="h-stat-lbl">UN PROCESO AUTOMATIZADO QUE GENERA RESULTADO</div>
+                </div>
+                <div class="h-stat">
+                    <div class="h-stat-num">✔</div>
+                    <div class="h-stat-lbl">BASE PARA ESCALAR SIN CONTRATAR</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             CÓMO FUNCIONA
+        ══════════════════════════════════════ -->
+        <section class="ws-section rv">
+            <div class="s-hdr" style="justify-content:center;">
+                <span class="s-num">EL SISTEMA //</span>
+                <h2 class="s-title">Cómo <em>funciona</em></h2>
+            </div>
+            <div class="fases-grid">
+                <div class="fase-item">
+                    <div class="fase-num">FASE 01 //</div>
+                    <h4>Detectamos el dinero perdido</h4>
+                    <p>Mapeamos juntos dónde tu negocio pierde tiempo y ventas. Identificamos el proceso exacto que tu agente va a resolver.</p>
+                </div>
+                <div class="fase-item">
+                    <div class="fase-num">FASE 02 //</div>
+                    <h4>Diseñamos tu agente</h4>
+                    <p>Usamos el Lienzo Agéntico para definir qué hace, cómo responde y qué reglas de negocio debe seguir. Sin tecnicismos.</p>
+                </div>
+                <div class="fase-item">
+                    <div class="fase-num">FASE 03 //</div>
+                    <h4>Lo construyes paso a paso</h4>
+                    <p>Con herramientas no-code (n8n, Zapier, Claude) construyes tu agente en vivo. Cada sesión es práctica aplicada a tu caso.</p>
+                </div>
+                <div class="fase-item">
+                    <div class="fase-num">FASE 04 //</div>
+                    <h4>Lo activas en tu negocio</h4>
+                    <p>Tu agente queda conectado a tus canales reales: WhatsApp, email, web. Lo pruebas, lo ajustas y lo dejas corriendo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             QUÉ INCLUYE
+        ══════════════════════════════════════ -->
+        <section class="ws-section rv">
+            <div class="s-hdr" style="justify-content:center;">
+                <span class="s-num">ACCESO COMPLETO //</span>
+                <h2 class="s-title">Qué <em>incluye</em></h2>
+            </div>
+            <div class="include-list">
+                <div class="include-item">
+                    <span class="include-check">✓</span>
+                    <div>
+                        <h5>Lienzo Agéntico (Canvas)</h5>
+                        <p>Plantilla lista para mapear tu proceso y diseñar tu agente sin empezar desde cero.</p>
+                    </div>
+                </div>
+                <div class="include-item">
+                    <span class="include-check">✓</span>
+                    <div>
+                        <h5>Flujos automatizados no-code</h5>
+                        <p>Construcción con n8n, Zapier o equivalentes. Sin programar. Sin depender de un técnico.</p>
+                    </div>
+                </div>
+                <div class="include-item">
+                    <span class="include-check">✓</span>
+                    <div>
+                        <h5>Prompts optimizados</h5>
+                        <p>Instrucciones probadas en negocios reales de LATAM. Tu agente habla y responde como tú quieres.</p>
+                    </div>
+                </div>
+                <div class="include-item">
+                    <span class="include-check">✓</span>
+                    <div>
+                        <h5>Casos reales de PyMEs</h5>
+                        <p>Ejemplos aplicados a negocios como el tuyo. Ves cómo otros lo hicieron y lo adaptas a tu contexto.</p>
+                    </div>
+                </div>
+                <div class="include-item">
+                    <span class="include-check">✓</span>
+                    <div>
+                        <h5>Grabaciones de sesiones</h5>
+                        <p>Acceso a todas las sesiones grabadas para que puedas repasar cada paso a tu ritmo.</p>
+                    </div>
+                </div>
+                <div class="include-item">
+                    <span class="include-check">✓</span>
+                    <div>
+                        <h5>Acceso a comunidad de egresados</h5>
+                        <p>Red de emprendedores que ya tienen agentes funcionando. Soporte continuo después de la implementación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             CASOS DE USO
+        ══════════════════════════════════════ -->
+        <section class="ws-section rv">
+            <div class="s-hdr" style="justify-content:center;">
+                <span class="s-num">EJEMPLOS REALES //</span>
+                <h2 class="s-title">Lo que tu agente<br><em>puede hacer hoy</em></h2>
+            </div>
+            <div class="casos-grid">
+                <div class="caso-item">
+                    <div class="caso-type">// CASO DE USO 01</div>
+                    <h4>Agente de ventas en WhatsApp</h4>
+                    <p>Responde consultas, califica prospectos y envía propuestas automáticamente. Trabaja mientras tú no estás disponible.</p>
+                    <div class="caso-result">→ Ventas que antes se perdían por no responder a tiempo</div>
+                </div>
+                <div class="caso-item">
+                    <div class="caso-type">// CASO DE USO 02</div>
+                    <h4>Agente de seguimiento automático</h4>
+                    <p>Contacta prospectos que no respondieron, envía recordatorios de pago y reactiva clientes inactivos sin que tengas que acordarte.</p>
+                    <div class="caso-result">→ Pipeline siempre activo sin esfuerzo manual</div>
+                </div>
+                <div class="caso-item">
+                    <div class="caso-type">// CASO DE USO 03</div>
+                    <h4>Agente de tareas operativas</h4>
+                    <p>Genera reportes, filtra correos, actualiza inventarios o procesa pedidos. Todo lo repetitivo que hoy consume horas de tu equipo.</p>
+                    <div class="caso-result">→ Horas recuperadas cada semana para trabajo de alto valor</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             TESTIMONIOS
+        ══════════════════════════════════════ -->
+        <section class="ws-section rv">
+            <div class="s-hdr" style="justify-content:center;">
+                <span class="s-num">RESULTADOS REALES //</span>
+                <h2 class="s-title">Lo que dicen<br><em>quienes ya lo hicieron</em></h2>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-item">
+                    <p class="testi-quote">Ya tengo un bot que responde clientes solo. Antes perdía ventas porque no podía atender rápido. Ahora el agente responde en segundos y yo solo cierro los que ya están convencidos.</p>
+                    <div class="testi-author"><strong>María G.</strong> — Agencia de marketing, Lima</div>
+                </div>
+                <div class="testi-item">
+                    <p class="testi-quote">Me ahorré 3 horas diarias de trabajo operativo. El agente procesa los pedidos, actualiza el sistema y avisa al equipo. Es como haber contratado una persona más, pero a una fracción del costo.</p>
+                    <div class="testi-author"><strong>Carlos M.</strong> — Distribuidora, Bogotá</div>
+                </div>
+                <div class="testi-item">
+                    <p class="testi-quote">Pensé que iba a ser complicado. En la primera sesión ya tenía el flujo diseñado. A la tercera semana el agente ya estaba respondiendo clientes por WhatsApp solo.</p>
+                    <div class="testi-author"><strong>Andrea V.</strong> — Consultora freelance, México DF</div>
+                </div>
+                <div class="testi-item">
+                    <p class="testi-quote">El seguimiento de cobranza lo hacía yo manualmente todos los viernes. Ahora el agente lo hace automático. Recuperé ese tiempo y además cobro más rápido porque no se olvida de nadie.</p>
+                    <div class="testi-author"><strong>Roberto P.</strong> — Servicios profesionales, Santiago</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             PRECIO + URGENCIA
+        ══════════════════════════════════════ -->
+        <section class="ws-section rv">
+            <div class="s-hdr" style="justify-content:center;">
+                <span class="s-num">INVERSIÓN //</span>
+                <h2 class="s-title">Acceso <em>completo</em></h2>
+            </div>
+
+            <div class="price-box glass-card">
+                <div class="s-num" style="color:var(--g);">[ PRECIO DE LANZAMIENTO ]</div>
+                <div style="font-size: 1.1rem; text-decoration: line-through; margin-bottom: -0.5rem; color: var(--w30);">$197 USD</div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; margin: 1.5rem 0;">
+                    <span style="font-size: 4rem; line-height: 1; color: var(--w); font-weight: 800; text-shadow: 0 0 30px var(--g-gl);">$97 USD</span>
+                    <span style="font-size: 1.1rem; font-weight: 400; color: var(--w50);">≈ S/ 387.00</span>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--g); letter-spacing: 0.08em; margin-bottom: 2rem;">
+                    // ACCESO AL SISTEMA COMPLETO + IMPLEMENTACIÓN EN VIVO + COMUNIDAD
+                </p>
+
+                <a href="https://t.me/SinapsisAgente_bot?start=empleado" class="btn btn-premium btn-full"
+                    style="font-size: 1.15rem; padding: 1.5rem;">
+                    👉 Quiero mi Empleado Digital →
                 </a>
 
-                <div class="bonus-alert">
-                    <p>🎁 <strong>GARANTÍA SINAPSIS:</strong> El 100% de tu entrada se convierte en crédito para implementar tu primer Agente de IA real en tu empresa. No es un descuento — es inversión directa en tu operación.</p>
+                <div class="garantia" style="margin-top: 2rem; text-align: left;">
+                    <span class="g-icon">🛡️</span>
+                    <p><strong>GARANTÍA SINAPSIS:</strong> Si al finalizar el programa no tienes un agente funcionando en tu negocio, te devolvemos el dinero. Sin preguntas. Confiamos en el proceso porque lo hemos probado.</p>
                 </div>
             </div>
 
-            <!-- PARA QUIÉN ES -->
-            <div class="rv" style="margin-top: 6rem;">
-                <div class="s-hdr" style="justify-content:center;">
-                    <h2 class="s-title">¿Este taller es <em>para ti</em>?</h2>
+            <!-- URGENCIA -->
+            <div class="urgencia-bar rv">
+                <div class="u-num" style="color:var(--y);">⚡</div>
+                <div class="u-text">
+                    <strong>Cupos limitados a 25 personas.</strong><br>
+                    No es marketing. Es para garantizar que cada participante tenga implementación real y atención personalizada. Cuando se llena, se cierra.
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--bline); border: 1px solid var(--bline); margin-top: 2rem;">
-                    <div style="background: var(--b700); padding: 2rem; border-left: 3px solid var(--g);">
-                        <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 1rem;">// SÍ ES PARA TI SI...</div>
-                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
-                            <li style="font-size: 0.8rem; color: var(--w); display: flex; gap: 0.6rem;"><span style="color:var(--g); flex-shrink:0;">✓</span> Eres dueño o gerente de una PyME de 2 a 50 personas</li>
-                            <li style="font-size: 0.8rem; color: var(--w); display: flex; gap: 0.6rem;"><span style="color:var(--g); flex-shrink:0;">✓</span> Tienes procesos repetitivos que consumen tiempo de tu equipo</li>
-                            <li style="font-size: 0.8rem; color: var(--w); display: flex; gap: 0.6rem;"><span style="color:var(--g); flex-shrink:0;">✓</span> Quieres implementar IA pero sin depender de un técnico</li>
-                            <li style="font-size: 0.8rem; color: var(--w); display: flex; gap: 0.6rem;"><span style="color:var(--g); flex-shrink:0;">✓</span> Estás listo para invertir 3 horas en cambiar cómo opera tu negocio</li>
-                        </ul>
-                    </div>
-                    <div style="background: var(--b800); padding: 2rem; border-left: 3px solid rgba(255,95,87,0.5);">
-                        <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--w50); margin-bottom: 1rem;">// NO ES PARA TI SI...</div>
-                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
-                            <li style="font-size: 0.8rem; color: var(--w70); display: flex; gap: 0.6rem;"><span style="color:#ff5f57; flex-shrink:0;">✕</span> Buscas un curso de programación o código</li>
-                            <li style="font-size: 0.8rem; color: var(--w70); display: flex; gap: 0.6rem;"><span style="color:#ff5f57; flex-shrink:0;">✕</span> Quieres teoría sin aplicación inmediata</li>
-                            <li style="font-size: 0.8rem; color: var(--w70); display: flex; gap: 0.6rem;"><span style="color:#ff5f57; flex-shrink:0;">✕</span> No tienes un proceso específico que quieras automatizar</li>
-                            <li style="font-size: 0.8rem; color: var(--w70); display: flex; gap: 0.6rem;"><span style="color:#ff5f57; flex-shrink:0;">✕</span> Prefieres esperar 6 meses antes de dar el primer paso</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TABLA COMPARATIVA -->
-            <div class="rv" style="margin-top: 6rem;">
-                <div class="s-hdr" style="justify-content:center;">
-                    <h2 class="s-title">Dos caminos.<br><em>Una decisión.</em></h2>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--bline); border: 1px solid var(--bline); margin-top: 2rem;">
-                    <!-- OPCIÓN A -->
-                    <div style="background: var(--b800); padding: 2.5rem 2rem; position: relative; opacity: 0.75;">
-                        <div style="font-size: 0.6rem; letter-spacing: 0.18em; color: var(--w50); margin-bottom: 1rem;">// OPCIÓN A</div>
-                        <h4 style="color: var(--w); font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem;">Lo Intentas Solo</h4>
-                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
-                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> 6+ meses de ensayo y error sin estructura
-                            </li>
-                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> Pagando herramientas que no sabes cómo usar
-                            </li>
-                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> Sin metodología probada en empresas reales
-                            </li>
-                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: #ff5f57; flex-shrink:0;">✕</span> Frustración, abandono y pérdida de tiempo valioso
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- OPCIÓN B — ESTE WORKSHOP -->
-                    <div style="background: var(--b700); padding: 2.5rem 2rem; border: 2px solid var(--g); border-top: 4px solid var(--g); position: relative; z-index: 1; box-shadow: 0 0 40px rgba(0,255,110,0.08);">
-                        <div style="font-size: 0.6rem; letter-spacing: 0.18em; color: var(--g); margin-bottom: 1rem;">// OPCIÓN B — ESTE WORKSHOP</div>
-                        <h4 style="color: var(--g); font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem;">3 Horas con Metodología</h4>
-                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
-                            <li style="font-size: 0.78rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
-                                <span style="color: var(--g); flex-shrink:0;">✓</span> Lienzo Agéntico: tu proceso mapeado en 1 hora
-                            </li>
-                            <li style="font-size: 0.78rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
-                                <span style="color: var(--g); flex-shrink:0;">✓</span> Prompts reales para tu caso de negocio específico
-                            </li>
-                            <li style="font-size: 0.78rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
-                                <span style="color: var(--g); flex-shrink:0;">✓</span> Plan de implementación que te llevas ese día
-                            </li>
-                            <li style="font-size: 0.78rem; color: var(--w); display: flex; gap: 0.5rem; font-weight: 700;">
-                                <span style="color: var(--g); flex-shrink:0;">✓</span> Certificación digital para tu perfil profesional
-                            </li>
-                        </ul>
-                        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,255,110,0.2); font-size: 0.7rem; color: var(--g); letter-spacing: 0.08em; font-weight: 700;">$97 USD · GARANTÍA DE CRÉDITO →</div>
-                    </div>
-                    <!-- SINAPSIS_OS -->
-                    <div style="background: var(--b800); padding: 2.5rem 2rem; border-top: 2px solid var(--c); position: relative;">
-                        <div style="font-size: 0.6rem; letter-spacing: 0.18em; color: var(--c); margin-bottom: 1rem;">// SIGUIENTE NIVEL</div>
-                        <h4 style="color: var(--w); font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem;">SINAPSIS_OS Completo</h4>
-                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
-                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: var(--c); flex-shrink:0;">→</span> Implementación experta llave en mano
-                            </li>
-                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: var(--c); flex-shrink:0;">→</span> 12 agentes desplegados en 30 días
-                            </li>
-                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: var(--c); flex-shrink:0;">→</span> Los $97 del taller se abonan al proyecto
-                            </li>
-                            <li style="font-size: 0.78rem; color: var(--w70); display: flex; gap: 0.5rem;">
-                                <span style="color: var(--c); flex-shrink:0;">→</span> Retorno promedio documentado: +30% en 90 días
-                            </li>
-                        </ul>
-                        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,229,255,0.2); font-size: 0.7rem; color: var(--c); letter-spacing: 0.08em;">desde $497 USD →</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RESULTADOS SIMPLES -->
-            <div class="rv" style="margin: 6rem 0;">
-                <div class="s-hdr" style="justify-content:center;">
-                    <h2 class="s-title">Resultados <em>Típicos</em></h2>
-                </div>
-                <div class="hero-stats" style="margin-top: 2rem; border-color: var(--bline-h);">
-                    <div class="h-stat">
-                        <div class="h-stat-num" style="font-size:1.8rem;">15h</div>
-                        <div class="h-stat-lbl">HORAS AHORRADAS / SEMANA</div>
-                    </div>
-                    <div class="h-stat">
-                        <div class="h-stat-num" style="font-size:1.8rem;">< 5m</div>
-                        <div class="h-stat-lbl">LATENCIA DE ALERTA</div>
-                    </div>
-                    <div class="h-stat">
-                        <div class="h-stat-num" style="font-size:1.8rem;">0</div>
-                        <div class="h-stat-lbl">CÓDIGO REQUERIDO</div>
-                    </div>
+                <div style="margin-left: auto; text-align: right; flex-shrink: 0;">
+                    <div style="font-size: 0.6rem; color: var(--w50); letter-spacing: 0.12em;">CUPOS RESTANTES</div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--y); line-height: 1;"><span id="urgencia-slots">8</span>/25</div>
                 </div>
             </div>
         </section>
 
-            <!-- FACILITADOR -->
-            <div class="rv facilitador-box glass-card scan-line-card" style="margin: 8rem 0; background: var(--b700); border: 1px solid var(--bline); padding: 3rem; display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: center; border-left: 4px solid var(--g);">
-                <div class="facilitador-img" style="background: var(--b800); border: 1px solid var(--bline); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--g); box-shadow: 0 0 20px var(--g-gl);">
-                    RC
-                </div>
-                <div style="text-align: left;">
-                    <div class="s-num" style="color:var(--g); margin-bottom: 0.5rem;">[ EL FACILITADOR ]</div>
-                    <h2 class="s-title" style="font-size:1.8rem; margin-bottom: 1rem;">Ricardo <em>Cuba</em></h2>
-                    <p style="color:var(--w70); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
-                        Estratega en Inteligencia Artificial & Fundador de <b>Sinapsis OS</b>. Especialista en arquitectura de agentes autónomos y rediseño operativo para PyMEs en LATAM.
-                    </p>
-                    <ul style="list-style: none; padding: 0; color: var(--w70); font-size: 0.82rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-                        <li>▸ +50 procesos de PyMEs automatizados en LATAM.</li>
-                        <li>▸ Especialista en arquitectura de Agentes con Claude.</li>
-                        <li>▸ Low-Code avanzado: n8n, Make, Zapier en producción.</li>
-                        <li>▸ Creador del framework <i>Agentic Canvas</i>.</li>
-                        <li>▸ Fundador de Sinapsis OS — el primer OS agéntico para PyMEs.</li>
-                        <li>▸ Ha facilitado workshops en Perú, Colombia y México.</li>
-                    </ul>
-                </div>
+        <!-- ══════════════════════════════════════
+             FACILITADOR
+        ══════════════════════════════════════ -->
+        <div class="rv facilitador-box glass-card scan-line-card" style="margin: 4rem 0; background: var(--b700); border: 1px solid var(--bline); padding: 3rem; display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: center; border-left: 4px solid var(--g);">
+            <div class="facilitador-img" style="background: var(--b800); border: 1px solid var(--bline); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--g); box-shadow: 0 0 20px var(--g-gl);">
+                RC
             </div>
+            <div style="text-align: left;">
+                <div class="s-num" style="color:var(--g); margin-bottom: 0.5rem;">[ QUIEN LO GUÍA ]</div>
+                <h2 class="s-title" style="font-size:1.8rem; margin-bottom: 1rem;">Ricardo <em>Cuba</em></h2>
+                <p style="color:var(--w70); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Fundador de <b>Sinapsis OS</b>. Ha automatizado más de 50 procesos en PyMEs de LATAM usando agentes IA. Creador del framework Agentic Canvas y especialista en arquitectura de agentes autónomos con Claude, n8n y herramientas no-code.
+                </p>
+                <ul style="list-style: none; padding: 0; color: var(--w70); font-size: 0.82rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                    <li>▸ +50 procesos de PyMEs automatizados en LATAM.</li>
+                    <li>▸ Especialista en agentes con Claude de Anthropic.</li>
+                    <li>▸ Low-Code en producción: n8n, Make, Zapier.</li>
+                    <li>▸ Creador del framework <i>Agentic Canvas</i>.</li>
+                    <li>▸ Primer OS agéntico para PyMEs en español.</li>
+                    <li>▸ Implementaciones en Perú, Colombia y México.</li>
+                </ul>
+            </div>
+        </div>
 
-            <section id="faq" class="rv" style="padding-bottom: 8rem;">
-            <div class="s-hdr">
-                <span class="s-num">PREGUNTAS FRECUENTES //</span>
-                <h2 class="s-title">¿Es para mí?</h2>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--bline); border: 1px solid var(--bline);">
-                <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g);">
-                    <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 01</div>
-                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Necesito saber programar?</h4>
-                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">No. Para nada. Si puedes usar WhatsApp y escribir en Word, tienes todo lo que necesitas. El taller no tiene una sola línea de código — está hecho para dueños de negocio, no para técnicos.</p>
-                </div>
-                <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g);">
-                    <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 02</div>
-                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Quedará grabado si no puedo en vivo?</h4>
-                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Sí, todos los inscritos reciben la grabación por 7 días. Pero la parte más valiosa son las dinámicas en vivo: cuando ves a otro dueño mapear su proceso en tiempo real, todo hace clic.</p>
-                </div>
-                <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g); border-top: 1px solid var(--bline);">
-                    <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 03</div>
-                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Qué herramientas necesito?</h4>
-                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Usaremos Claude de Anthropic (tiene versión gratuita) y Telegram. Te mandamos una guía de configuración paso a paso antes del taller para que llegues listo — no necesitas configurar nada ese día.</p>
-                </div>
-                <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g); border-top: 1px solid var(--bline);">
-                    <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 04</div>
-                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Cómo reservo mi lugar?</h4>
-                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Haz clic en el botón y te llegará un mensaje de nuestro Agente en Telegram. Él te guía con los métodos de pago disponibles: Yape, Plin, transferencia bancaria o tarjeta. En menos de 5 minutos quedas inscrito.</p>
-                </div>
-                <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g); border-top: 1px solid var(--bline);">
-                    <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 05</div>
-                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Qué pasa si no me sirve?</h4>
-                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Los $97 se convierten en crédito para implementar tu primer agente real con nosotros. Si decides continuar a SINAPSIS_OS, no pagas el taller de nuevo — ya está abonado. Es inversión, no gasto.</p>
-                </div>
-                <div style="background: var(--b800); padding: 2rem; border-left: 2px solid var(--g); border-top: 1px solid var(--bline);">
-                    <div style="font-size: 0.6rem; letter-spacing: 0.15em; color: var(--g); margin-bottom: 0.6rem;">// 06</div>
-                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--w); margin-bottom: 0.75rem;">¿Para qué tipo de negocio funciona?</h4>
-                    <p style="font-size: 0.8rem; color: var(--w70); line-height: 1.7;">Para cualquier PyME con procesos repetitivos: agencias, comercios, servicios profesionales, distribuidoras, clínicas, estudios. Si tienes un proceso que se repite más de 10 veces por semana, tienes un candidato perfecto para tu primer agente.</p>
-                </div>
+        <!-- ══════════════════════════════════════
+             CTA FINAL
+        ══════════════════════════════════════ -->
+        <section class="cta-final rv">
+            <h2>
+                Tu negocio no debería<br>
+                <em>depender de ti.</em>
+            </h2>
+            <p style="color:var(--w70); font-size: 1rem; max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.8;">
+                Tienes 30 días para tener un agente IA trabajando en tu negocio.<br>
+                El único requisito es que quieras dejar de ser el cuello de botella.
+            </p>
+            <a href="https://t.me/SinapsisAgente_bot?start=empleado" class="btn btn-premium"
+                style="font-size: 1.2rem; padding: 1.5rem 3.5rem; display: inline-flex; gap: 0.5rem;">
+                👉 Empieza ahora
+            </a>
+            <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--w30);">
+                $97 USD · Solo 25 cupos · Garantía de resultado
             </div>
         </section>
+
     </main>
 
     <footer>
@@ -433,18 +618,18 @@
     </footer>
 
     <div class="statusbar">
-        <span class="s-live">MODO TALLER: ACTIVO</span>
-        <span>INSCRIPCIONES ABIERTAS</span>
+        <span class="s-live">IMPLEMENTACIÓN: ACTIVA</span>
+        <span>CUPOS LIMITADOS · 25 PERSONAS</span>
         <span id="sb-time">HORA: --:--:--</span>
-        <span class="ml">SINAPSIS_OS Portal del Taller</span>
+        <span class="ml">Tu Primer Empleado Digital™ — SINAPSIS_OS</span>
     </div>
 
     <script>
         // Contador regresivo — 14 de abril 2026, 08:00 hora Perú (UTC-5 = 13:00 UTC)
-        const FECHA_TALLER = new Date('2026-04-14T13:00:00Z');
+        const FECHA_INICIO = new Date('2026-04-14T13:00:00Z');
         function actualizarContador() {
             const ahora = new Date();
-            const diff = FECHA_TALLER - ahora;
+            const diff = FECHA_INICIO - ahora;
             const el = (id, v) => { const e = document.getElementById(id); if(e) e.textContent = v; };
             if (diff <= 0) {
                 ['cd-dias','cd-horas','cd-min','cd-seg'].forEach(id => el(id, '00'));
@@ -464,18 +649,19 @@
             document.getElementById('sb-time').textContent = `HORA: ${n.toLocaleTimeString('es-PE', { hour12: false })}`;
         }, 1000);
 
-        // Scarcity Counter
+        // Scarcity counter — sincroniza ambos contadores de cupos
         function updateSlots() {
-            const el = document.getElementById('slots-left');
-            if(!el) return;
-            const current = parseInt(el.textContent.replace('SOLO ', '')) || 6;
-            // Simulated random decrease
+            const heroEl = document.getElementById('slots-left');
+            const urgEl  = document.getElementById('urgencia-slots');
+            if (!heroEl) return;
+            const current = parseInt(heroEl.textContent) || 8;
             if (current > 3 && Math.random() > 0.85) {
-                el.textContent = `SOLO ${current - 1}`;
-                el.style.animation = 'blink 0.5s 3';
+                const next = current - 1;
+                heroEl.textContent = next;
+                if (urgEl) urgEl.textContent = next;
             }
         }
-        setInterval(updateSlots, 15000); // Check every 15s
+        setInterval(updateSlots, 15000);
 
         // Reveal animations
         const rio = new IntersectionObserver(entries => {
